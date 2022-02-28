@@ -42,50 +42,58 @@
         </div>
       </nav>
 
-      ADMIN DASHBOARD
 
-    <h1 class="judul">View Item</h1>
-
-    <table class="table table-dark table-striped" id="tabel">
-        <thead>
-          <tr>
-            <th scope="col">id</th>
-            <th scope="col">Gambar</th>
-            <th scope="col">Nama Menu</th>
-            <th scope="col">Kategori Menu</th>
-            <th scope="col">Deskripsi Menu</th>
-            <th scope="col">Harga Menu</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-            @foreach ($admins as $admin)
-                <tr>
-                <th scope="row">{{ $admin->id }}</th>
-                <td><img width="300px" src="{{ url('/data_file/'.$admin->file) }}"></td>
-                <td>{{ $admin->namaMenu }}</td>
-                <td>{{ $admin->kategoriMenu }}</td>
-                <td>{{ $admin->deskripsiMenu }}</td>
-                <td>{{ $admin->hargaMenu }}</td>
-                <td>
-                    <a href="{{route('updateItem', ['id'=>$admin->id])}}"><button type="submit" class="btn btn-success">Update</button></a>
-
-                    <form action="{{route('delete', ['id' => $admin->id])}}" method="post">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                </td>
-
-                </tr>
-            @endforeach
-        </tbody>
-      </table>
-
-
-    <form action="{{route('createItem')}}">
+    <h1 class="judul">Create Item</h1>
+      <form class="form" action="{{ route('create')}}"  method="POST" enctype="multipart/form-data">
         @csrf
-        <button type="submit" class="btn btn-primary">+Add New</button>
+
+        <div class="mb-3">
+            <label for="file" class="form-label">Gambar</label>
+            <input name= "file" type="file" class="form-control" id="file" placeholder="Upload Image">
+        </div>
+
+            @error('file')
+                <div class="alert alert-danger">{{$message}}</div>
+            @enderror
+
+        <div class="mb-3">
+            <label for="namaMenu" class="form-label">Nama Menu</label>
+            <input name="namaMenu" type="text" class="form-control" id="namaMenu" value="{{ old('namaMenu') }}" placeholder="Masukkan Nama Menu">
+        </div>
+
+            @error('namaMenu')
+                <div class="alert alert-danger">{{$message}}</div>
+            @enderror
+
+
+        <div class="mb-3">
+            <label for="kategoriMenu" class="form-label">Kategori Menu</label>
+            <input name= "kategoriMenu" type="text" class="form-control" id="kategoriMenu" value="{{ old('kategoriMenu') }}" placeholder="Masukkan Kategori Menu">
+        </div>
+
+            @error('kategoriMenu')
+                <div class="alert alert-danger">{{$message}}</div>
+            @enderror
+
+        <div class="mb-3">
+            <label for="deskripsiMenu" class="form-label">Deskripsi Menu</label>
+            <input name= "deskripsiMenu" type="text" class="form-control" id="deskripsiMenu" value="{{ old('deskripsiMenu') }}" placeholder="Masukkan Deskripsi Menu">
+        </div>
+
+            @error('deskripsiMenu')
+                <div class="alert alert-danger">{{$message}}</div>
+            @enderror
+
+        <div class="mb-3">
+            <label for="hargaMenu" class="form-label">Page</label>
+            <input name= "hargaMenu" type="numeric" class="form-control" id="hargaMenu" value="{{ old('hargaMenu') }}" placeholder="Rp">
+        </div>
+
+            @error('hargaMenu')
+                <div class="alert alert-danger">{{$message}}</div>
+            @enderror
+
+        <button type="submit" class="btn btn-success">Create</button>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

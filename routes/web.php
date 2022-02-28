@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\IsAdminMiddleware;
@@ -25,6 +26,17 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['middleware' => IsAdminMiddleware::class], function () {
     Route::get('/adminDashboard', [AdminController::class, 'adminDashboard'])->name('adminDashboard');
+    Route::get('/createItem', [AdminController::class, 'createItem'])->name('createItem');
+    Route::post('/create', [AdminController::class, 'create'])->name('create');
+    Route::get('/updateItem/{id}', [AdminController::class, 'updateItem'])->name('updateItem');
+    Route::patch('/update/{id}', [AdminController::class, 'update'])->name('update');
+    Route::delete('/delete/{id}',[AdminController::class, 'delete'])->name('delete');
 });
 
 Route::get('/userPage', [AdminController::class, 'userPage'])->name('userPage');
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/view', [AdminController::class, 'view'])->name('view');
+
+Route::get('/cari', [AdminController::class, 'cari'])->name('cari');
