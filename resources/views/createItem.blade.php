@@ -68,7 +68,14 @@
 
         <div class="mb-3">
             <label for="kategoriMenu" class="form-label">Kategori Menu</label>
-            <input name= "kategoriMenu" type="text" class="form-control" id="kategoriMenu" value="{{ old('kategoriMenu') }}" placeholder="Masukkan Kategori Menu">
+            <select name="kategoriMenu" id="kategoriMenu" class="form-control" required>
+                <option value="">Select</option>
+                <option value="snacks">Snacks</option>
+                <option value="dessert">Dessert</option>
+                <option value="nasi">Nasi</option>
+                <option value="ikan">Ikan</option>
+                <option value="western">Western</option>
+            </select>
         </div>
 
             @error('kategoriMenu')

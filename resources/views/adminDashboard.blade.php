@@ -62,7 +62,7 @@
             @foreach ($admins as $admin)
                 <tr>
                 <th scope="row">{{ $admin->id }}</th>
-                <td><img width="300px" src="{{ url('/data_file/'.$admin->file) }}"></td>
+                <td><img width="300px" src="{{ asset('storage/'.$admin->file) }}"></td>
                 <td>{{ $admin->namaMenu }}</td>
                 <td>{{ $admin->kategoriMenu }}</td>
                 <td>{{ $admin->deskripsiMenu }}</td>

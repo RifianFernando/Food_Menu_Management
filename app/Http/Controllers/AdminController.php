@@ -15,6 +15,7 @@ class AdminController extends Controller
 
     public function adminDashboard(){
         $admins = Admin::all();
+       // dd($admins);
         return view('adminDashboard', ['admins' => $admins]);
     }
 
@@ -33,15 +34,12 @@ class AdminController extends Controller
             'hargaMenu' => 'required|numeric'
         ]);
 
-        $file = $request->file('file'); /*menyimpan data file yang diupload ke variabel $file */
+        $file = $request->file('file')->getClientOriginalName();
 
-	    $nama_file1 = time()."_".$file->getClientOriginalName();
-
-	    $tujuan_upload = 'data_file'; /*isi dengan nama folder tempat kemana file diupload */
-	    $file->move($tujuan_upload,$nama_file1);
+        $insert = $request->file('file')->storeAs('public', $file);
 
         Admin::create([
-            'file' => $nama_file1,
+            'file' => $file,
             'namaMenu' => $request->namaMenu,
             'kategoriMenu' => $request->kategoriMenu,
             'deskripsiMenu' => $request->deskripsiMenu,
@@ -67,15 +65,17 @@ class AdminController extends Controller
             'hargaMenu' => 'required|numeric'
          ]);
 
-        $file = $request->file('file'); /*menyimpan data file yang diupload ke variabel $file */
+        $file = $request->file('file')->getClientOriginalName();
 
-	    $nama_file1 = time()."_".$file->getClientOriginalName();
+        $insert = $request->file('file')->storeAs('public', $file);
 
-	    $tujuan_upload = 'data_file'; /*isi dengan nama folder tempat kemana file diupload */
-	    $file->move($tujuan_upload,$nama_file1);
+	    // $nama_file1 = time()."_".$file->getClientOriginalName();
+
+	    // $tujuan_upload = 'data_file'; /*isi dengan nama folder tempat kemana file diupload */
+	    // $file->move($tujuan_upload,$nama_file1);
 
         $admins -> update([
-            'file' => $nama_file1,
+            'file' => $file,
             'namaMenu' => $request->namaMenu,
             'kategoriMenu' => $request->kategoriMenu,
             'deskripsiMenu' => $request->deskripsiMenu,
