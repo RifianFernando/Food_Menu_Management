@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --white: #f5f5f5;
+  --grey: #e4e4e4;
+  --dark-blue: #09172d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  /* font-family: 'Poppins'; */
+  color: var(--dark-blue);
+  font-weight: bold
+}
+
+.navbar-left a{
+    font-size: 24px;
+}
+.navbar-container {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  padding: 30px 80px;
+  justify-content: space-between;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 48px;
+  font-size: 24px;
+  align-items: center;
+  font-family: "Prompt";
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+.navbar-contact,
+.hero-button,
+.get-button {
+  background-color: rgba(228, 228, 228, 0.5);
+  padding: 6px 24px;
+  border-radius: 40px;
+}
+
+/* Landing Page */
+#Hero {
+  height: 100vh;
+  background: url("/img/Landingpage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+.hero-content {
+  flex-direction: column;
+  gap: 32px;
+  display: flex;
+  width: 750px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display';
+  font-size: 72px;
+  color: var(--white);
+}
+
+.hero-content p {
+  font-family: 'Poppins';
+  font-size: 24px;
+  color: var(--white);
+}
+
+.hero-button {
+  position: absolute;
+  bottom: 60px;
+}
+
+#about-us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 160px;
+}
+
+.about-container {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-container h1 {
+  text-align: center;
+  color: var(--dark-blue);
+  font-size: 64px;
+  font-family: 'Playfair Display';
+}
+
+.about-container p {
+  text-align: center;
+  color: var(--dark-blue);
+  font-size: 20px;
+  font-family: 'Poppins';
+}
+
+
