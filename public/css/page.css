@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --white: #f5f5f5;
+  --white: #f3f3f3;
   --grey: #e4e4e4;
   --dark-blue: #09172d;
 }
@@ -13,21 +13,21 @@
   box-sizing: border-box;
 }
 
-a {
+.navbar-container a {
   text-decoration: none;
-  /* font-family: 'Poppins'; */
   color: var(--dark-blue);
-  font-weight: bold
 }
 
 .navbar-left a{
     font-size: 24px;
+    font-weight: bold
 }
+
 .navbar-container {
   position: fixed;
   width: 100%;
   display: flex;
-  padding: 30px 80px;
+  padding: 30px 100px;
   justify-content: space-between;
 }
 
@@ -38,13 +38,18 @@ a {
   align-items: center;
   font-family: "Prompt";
 }
+.navbar-right a:hover {
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-weight: bold;
+}
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-  }
 
-.navbar-contact,
+.navbar-login{
+  width: 200px;
+  height: 40px;
+}
+
 .hero-button,
 .get-button {
   background-color: rgba(228, 228, 228, 0.5);
@@ -54,7 +59,7 @@ a {
 
 /* Landing Page */
 #Hero {
-  height: 100vh;
+  height: 110vh;
   background: url("/img/Landingpage.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -71,61 +76,78 @@ a {
   gap: 60px;
 }
 
-.hero-content {
-  flex-direction: column;
-  gap: 32px;
+/* Food List */
+.listfood{
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
-  width: 750px;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+  background-color: #f3f3f3;
 }
-
-.hero-content h1 {
-  font-family: 'Playfair Display';
-  font-size: 72px;
-  color: var(--white);
-}
-
-.hero-content p {
-  font-family: 'Poppins';
-  font-size: 24px;
-  color: var(--white);
-}
-
-.hero-button {
-  position: absolute;
-  bottom: 60px;
-}
-
-#about-us {
+.navbartype{
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 64px 160px;
+  padding: 30px 100px;
+  justify-content: space-between;
 }
 
-.about-container {
-  display: flex;
-  gap: 32px;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.type-food {
+  display: flex;  
+  gap: 48px;
+  font-family: "Prompt";
+  padding-bottom: 2px;
+  margin-top: 8px;
+  margin-bottom: 83%;
 }
 
-.about-container h1 {
-  text-align: center;
+.type-food a:hover{
+  text-decoration: none;
   color: var(--dark-blue);
-  font-size: 64px;
-  font-family: 'Playfair Display';
+  font-weight: bold;
+  font-size: 48px
+}
+.type-food a:active{
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-weight: bold;
+  font-size: 48px
 }
 
-.about-container p {
+.type-food a{
+  text-decoration: none;
+  color: #C4C4C4;
+  font-weight: bold;
+  font-size: 48px
+}
+
+.search { 
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: end;
+  padding-top: 25px;
+}
+
+.searchTerm {
+  width: 20%;
+  border: 2px solid #C4C4C4;
+  padding: 20px;
+  height: 50px;
+  border-radius: 20px 0 0 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  outline: none;
+  color: #000000;
+}
+
+.searchButton {
+  width: 40px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
   text-align: center;
-  color: var(--dark-blue);
+  color: #f3f3f3;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
   font-size: 20px;
-  font-family: 'Poppins';
 }
-
 

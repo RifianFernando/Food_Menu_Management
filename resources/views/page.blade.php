@@ -14,34 +14,44 @@
         <div class="navbar-left">
           <a href="/page">Lana's Western Food</a>
         </div>
-        <div class="navbar-right">
-          <a href="/page">Home</a>
-          <a href="">Menu</a>
-          <a href="">Details</a>
-          <div class="navbar-contact">
-            <a href="/login">login</a>
+          <div class="navbar-right">
+              <a href="/page">Home</a>
+              <a href="">Menu</a>
+              <a href="">Details</a>
+              <div class="navbar-login">
+              <a href="/login"><img src="{{ asset('img/Button.png') }}" alt=""></a>
           </div>
         </div>
-      </div>
+    </div>
       <section id="Hero">
         <div class="hero-container">
         </div>
       </section>
-      <section id="about-us">
-        <div class="about-container">
-          <h1>About Us</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim mattis sit placerat in semper sed volutpat cursus. Nullam ac facilisi orci tellus, vel arcu. Fermentum erat augue dui malesuada aliquam. Bibendum magna orci, pharetra,
-            ultrices diam. In vivamus tristique faucibus ac. Id nec lectus amet facilisi dui ut sit enim. Volutpat imperdiet ultricies gravida dis aliquet vulputate sapien nisl netus. Sem dui, dui id donec.
-          </p>
-        </div>
-      </section>
-      
 
+      <div class="listfood">
+        <div class="navbartype">
+            <div class="type-food">
+              <a href="#food">Food</a>
+              <a href="#drink">Drink</a>
+            </div>
+              <form class="search">
+                 <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                 <button type="submit" class="searchButton">
+                   <img src="{{ asset('img/searchicon.png') }}">
+                   <i class="fa fa-search"></i>
+                </button> 
+              </form>
+        </div>
+
+        <div class="food">
+        </div>
+      </div>
+      
 
 
 
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script href="{{ asset('js/page.js') }}">
 </body>
 </html>
