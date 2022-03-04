@@ -76,41 +76,32 @@
   gap: 60px;
 }
 
-/* Food List */
-.listfood{
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* search navbar */
+.navbartype{
   display: flex;
   background-color: #f3f3f3;
-}
-.navbartype{
-  width: 100%;
-  display: flex;
-  padding: 30px 100px;
+  padding: 10px 100px;
   justify-content: space-between;
 }
 
 .type-food {
-  display: flex;  
+  display: flex;
   gap: 48px;
   font-family: "Prompt";
   padding-bottom: 2px;
-  margin-top: 8px;
-  margin-bottom: 83%;
 }
 
 .type-food a:hover{
   text-decoration: none;
   color: var(--dark-blue);
   font-weight: bold;
-  font-size: 48px
+  font-size: 48px;
 }
 .type-food a:active{
   text-decoration: none;
   color: var(--dark-blue);
   font-weight: bold;
-  font-size: 48px
+  font-size: 48px;
 }
 
 .type-food a{
@@ -126,6 +117,7 @@
   display: flex;
   justify-content: end;
   padding-top: 25px;
+  overflow: hidden;
 }
 
 .searchTerm {
@@ -136,7 +128,6 @@
   border-radius: 20px 0 0 20px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  outline: none;
   color: #000000;
 }
 
@@ -150,4 +141,39 @@
   cursor: pointer;
   font-size: 20px;
 }
+
+/* Food List */
+.list-food-container{
+  display: flex;
+  justify-content: flex-start;
+  background-color: #f3f3f3;
+  display: flex;
+  padding-top: 40px;
+  padding-left: 100px;
+  font-family: "Prompt";  
+  font-size: 36px;
+  font-weight: 600;
+}
+
+#list-food
+{
+    background-color: #f3f3f3;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex: wrap;
+    justify-content: start;
+    padding: 10px 100px;  
+}
+
+.foreach-food{
+  border: 1px solid #f3f3f3;
+  padding: 10px;
+  float: left;
+  width: 200px;
+  margin: 5px;
+}
+
+
 

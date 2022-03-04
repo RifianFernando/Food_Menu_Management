@@ -23,29 +23,93 @@
           </div>
         </div>
     </div>
-      <section id="Hero">
-        <div class="hero-container">
-        </div>
-      </section>
 
-      <div class="listfood">
-        <div class="navbartype">
-            <div class="type-food">
-              <a href="#food">Food</a>
-              <a href="#drink">Drink</a>
-            </div>
-              <form class="search">
-                 <input type="text" class="searchTerm" placeholder="What are you looking for?">
-                 <button type="submit" class="searchButton">
-                   <img src="{{ asset('img/searchicon.png') }}">
-                   <i class="fa fa-search"></i>
-                </button> 
-              </form>
-        </div>
-
-        <div class="food">
-        </div>
+    <section id="Hero">
+      <div class="hero-container">
       </div>
+    </section>
+
+      <div class="navbartype">
+          <div class="type-food">
+            <a href="#food">Food</a>
+            <a href="#drink">Drink</a>
+          </div>
+            <form class="search" action="" method="GET">
+              @csrf
+                <input type="text" class="searchTerm" name="" placeholder="What are you looking for?">
+                <button type="submit" class="searchButton">
+                  <img src="{{ asset('img/searchicon.png') }}">
+                  <i class="fa fa-search"></i>
+              </button> 
+            </form>
+      </div>
+      <div class="list-food-container">
+        <p>Main Course</p>
+      </div>
+
+      <section id="list-food"> 
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        <div class="foreach-food">
+          this is food
+        </div>
+        
+      </section>
       
 
 
