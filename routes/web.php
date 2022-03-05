@@ -42,7 +42,4 @@ Route::get('/view', [AdminController::class, 'view'])->name('view');
 Route::get('/cari', [AdminController::class, 'cari'])->name('cari');
 
 
-Route::get('/page', function () {
-    return view('page');
-});
 

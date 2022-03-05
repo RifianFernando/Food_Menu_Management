@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
     public function userPage(){
         $admins = Admin::all();
-        return view('userPage' , ['admins' => $admins]);
+        $user = Auth::user();
+        return view('page' , ['admins' => $admins]);
     }
-
+    
     public function adminDashboard(){
         $admins = Admin::all();
        // dd($admins);

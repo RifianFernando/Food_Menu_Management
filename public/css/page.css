@@ -46,8 +46,10 @@
 
 
 .navbar-login{
-  width: 200px;
+  width: 150px;
   height: 40px;
+  border-radius: 30px;
+  border-color: #f3f3f3;
 }
 
 .hero-button,

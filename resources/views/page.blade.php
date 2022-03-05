@@ -18,12 +18,28 @@
               <a href="/page">Home</a>
               <a href="">Menu</a>
               <a href="">Details</a>
-              <div class="navbar-login">
-              <a href="/login"><img src="{{ asset('img/Button.png') }}" alt=""></a>
-          </div>
+                @if(Route::has('login'))
+                    @auth
+                    <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <div class="navbar-login">
+                        <button class="navbar-login">
+                          <img src="{{ asset('img/Logout.png') }}" alt="">
+                        </button> 
+                      </div>
+                    </form>
+                    @else
+                      <div class="navbar-login">
+                        <a href="/login"><img src="{{ asset('img/ButtonLogin.png') }}" alt=""></a>
+                      </div>
+                    @endif
+                
+                  @endauth
+                
+                 
         </div>
     </div>
-
+    
     <section id="Hero">
       <div class="hero-container">
       </div>
@@ -48,20 +64,21 @@
       </div>
 
       <section id="list-food"> 
-          @foreach ( as )
-            
-          @endforeach
+        @if($admins == null)
+          {{-- Tulis Null --}}
+        @endif
+        @foreach ($admins as $admin)
           <div class="foreach-food">
             <div class="makanan">
               <div class="gambar">
-                <img src="{{ asset('img/ayam.png') }}" alt="Food.png">
+                <img src="{{ asset('storage/'.$admin->file) }}" alt="Food.png">
               </div>
             <div class="makanan1">
               <div class="nama-makanan">
-                <p> nasi goreng padang</p>
+                <p> {{ $admin->namaMenu }}</p>
               </div>
               <div class="harga-makanan">
-                <p> Rp5000</p>  
+                <p> {{ $admin->hargaMenu }}</p>  
               </div>
               <button type="submit" class="add-button">
                 <img src="{{ asset('img/add-button1.png') }}">
@@ -69,6 +86,8 @@
             </div>
             </div>
           </div>
+
+        @endforeach
 
       </section>
       
