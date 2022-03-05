@@ -48,67 +48,18 @@
       </div>
 
       <section id="list-food"> 
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        <div class="foreach-food">
-          this is food
-        </div>
-        
+          
+          <div class="foreach-food">
+            <div class="makanan">
+              <div class="gambar">
+                <img src="{{ asset('img/Landingpage.png') }}" alt="Food.png">
+              </div>
+              <div class="tulisan-gambar">
+                makanan
+              </div>
+            </div>
+          </div>
+
       </section>
       
 

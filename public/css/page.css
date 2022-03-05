@@ -7,10 +7,11 @@
   --dark-blue: #09172d;
 }
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #f3f3f3;
 }
 
 .navbar-container a {
@@ -24,7 +25,6 @@
 }
 
 .navbar-container {
-  position: fixed;
   width: 100%;
   display: flex;
   padding: 30px 100px;
@@ -158,21 +158,35 @@
 #list-food
 {
     background-color: #f3f3f3;
+    height: 100%;
     height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex: wrap;
-    justify-content: start;
-    padding: 10px 100px;  
+    width: 100%;
 }
-
+.makanan{
+  width: 500px;
+  height: 300px;
+  border: 4px solid black;
+  border-radius: 40px;
+  justify-content: center;
+}
+.gambar{
+  display: flex;
+  margin-left: 10px;
+  width: 220px;
+  height: 240px;
+  margin-top: 10px;
+}
+.gambar img{
+  border-radius: 40px;
+}
 .foreach-food{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   border: 1px solid #f3f3f3;
-  padding: 10px;
   float: left;
-  width: 200px;
-  margin: 5px;
+  padding-left: 80px;
+  padding-bottom: 50px;
 }
 
 
