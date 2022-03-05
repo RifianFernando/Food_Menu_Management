@@ -15,7 +15,7 @@
           <a href="/page">Lana's Western Food</a>
         </div>
           <div class="navbar-right">
-              <a href="/page">Home</a>
+              <a href="/userPage">Home</a>
               <a href="">Menu</a>
               <a href="">Details</a>
                 @if(Route::has('login'))
@@ -23,7 +23,7 @@
                     <form action="{{route('logout')}}" method="POST">
                         @csrf
                         <div class="navbar-login">
-                        <button class="navbar-login">
+                        <button class="navbar-button">
                           <img src="{{ asset('img/Logout.png') }}" alt="">
                         </button> 
                       </div>
@@ -50,7 +50,7 @@
             <a href="#food">Food</a>
             <a href="#drink">Drink</a>
           </div>
-            <form class="search" action="" method="GET">
+            <form class="search" action="{{url('/cari')}}" method="GET">
               @csrf
                 <input type="text" class="searchTerm" name="" placeholder="What are you looking for?">
                 <button type="submit" class="searchButton">
@@ -63,9 +63,10 @@
         <p>Main Course</p>
       </div>
 
+      <div class="list-food2">
       <section id="list-food"> 
         @if($admins == null)
-          {{-- Tulis Null --}}
+          Tulis Null
         @endif
         @foreach ($admins as $admin)
           <div class="foreach-food">
@@ -78,24 +79,53 @@
                 <p> {{ $admin->namaMenu }}</p>
               </div>
               <div class="harga-makanan">
-                <p> {{ $admin->hargaMenu }}</p>  
+                <p> Rp{{ $admin->hargaMenu }}</p>  
               </div>
-              <button type="submit" class="add-button">
+              <button type="submit" id="myBtn" class="add-button" data-bs-toggle="modal" data-bs-target="#myModal{{$admin->id}}">
                 <img src="{{ asset('img/add-button1.png') }}">
               </button>
             </div>
             </div>
           </div>
 
+            {{-- Modal --}}
+            <div id="myModal{{ $admin->id }}" class="modal">
+              <div class="isi-cart">
+                <span class="close">&times;</span>
+                  <div class="img-modal">
+                    <div class="img-css">
+                      <img src="{{ asset('storage/'.$admin->file) }}" alt="">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="nama-makanan-modal">
+                    <p>{{ $admin->namaMenu }}</p>
+                  </div>
+                  <div class="deskripsi-makanan-modal">
+                    <p>Sebuah ayam goreng khas upin ipin yang sangat mengigau selera disetiap sudut</p>
+                  </div>
+                  <div class="harga-makanan-modal">
+                    <p>{{ $admin->hargaMenu }}</p>
+                    <button type="submit" id="noob" class="add-button-modal">
+                      <img src="{{ asset('img/add-button1.png') }}">
+                    </button>
+                  </div>
+              </div>
+            </div>
+            {{-- Penutup Modal --}}
         @endforeach
-
+        
       </section>
+      </div>
+
       
 
-
+      <div class="footer">
+        <button  class="button-cart" style="background: url({{ asset('img/button-cart.png') }})">c</button>
+      </div>
 
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script href="{{ asset('js/page.js') }}">
+<script type="text/javascript" src="{{ asset('js/page.js') }}"></script>
 </body>
 </html>

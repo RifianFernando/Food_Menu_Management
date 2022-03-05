@@ -11,13 +11,11 @@ class AdminController extends Controller
 {
     public function userPage(){
         $admins = Admin::all();
-        $user = Auth::user();
-        return view('page' , ['admins' => $admins]);
+        return view('page' , ['admins' => $admins]); 
     }
     
     public function adminDashboard(){
         $admins = Admin::all();
-       // dd($admins);
         return view('adminDashboard', ['admins' => $admins]);
     }
 
@@ -98,6 +96,6 @@ class AdminController extends Controller
         $admins = DB::table('admins')
         ->where('namaMenu','like',"%".$cari."%")->paginate();
 
-    return view('userPage',['admins' => $admins]);
+    return view('page',['admins' => $admins]);
     }
 }
