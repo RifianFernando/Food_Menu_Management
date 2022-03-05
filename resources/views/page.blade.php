@@ -48,15 +48,25 @@
       </div>
 
       <section id="list-food"> 
-          
+          @foreach ( as )
+            
+          @endforeach
           <div class="foreach-food">
             <div class="makanan">
               <div class="gambar">
-                <img src="{{ asset('img/Landingpage.png') }}" alt="Food.png">
+                <img src="{{ asset('img/ayam.png') }}" alt="Food.png">
               </div>
-              <div class="tulisan-gambar">
-                makanan
+            <div class="makanan1">
+              <div class="nama-makanan">
+                <p> nasi goreng padang</p>
               </div>
+              <div class="harga-makanan">
+                <p> Rp5000</p>  
+              </div>
+              <button type="submit" class="add-button">
+                <img src="{{ asset('img/add-button1.png') }}">
+              </button>
+            </div>
             </div>
           </div>
 
