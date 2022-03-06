@@ -11,7 +11,8 @@ class AdminController extends Controller
 {
     public function userPage(){
         $admins = Admin::all();
-        return view('page' , ['admins' => $admins]); 
+        $total = Admin::count();
+        return view('page' , ['admins' => $admins, 'total' => $total]); 
     }
     
     public function adminDashboard(){
@@ -92,10 +93,10 @@ class AdminController extends Controller
 
     public function cari(Request $request){
         $cari = $request->cari;
-
+        $total = Admin::count();
         $admins = DB::table('admins')
         ->where('namaMenu','like',"%".$cari."%")->paginate();
 
-    return view('page',['admins' => $admins]);
+    return view('page',['admins' => $admins, 'total' => $total]);
     }
 }

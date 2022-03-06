@@ -1,6 +1,6 @@
-var eachfood = {{ $admins->toJson() }};
-var modal = document.getElementById("myModaleachfood"+eachfood);
-console.log(modal)
+// var eachfood = {{ $admins->toJson() }};
+// var modal = document.getElementById("myModaleachfood"+eachfood);
+// console.log(modal)
 // var btn = document.getElementById("myBtn");
 // var span = document.getElementsByClassName("close")[0];
 // var add = document.getElementById("noob");

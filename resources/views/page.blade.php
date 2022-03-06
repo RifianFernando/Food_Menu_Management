@@ -12,7 +12,7 @@
 <body>
     <div class="navbar-container">
         <div class="navbar-left">
-          <a href="/page">Lana's Western Food</a>
+          <a href="/userPage">Lana's Western Food</a>
         </div>
           <div class="navbar-right">
               <a href="/userPage">Home</a>
@@ -52,7 +52,7 @@
           </div>
             <form class="search" action="{{url('/cari')}}" method="GET">
               @csrf
-                <input type="text" class="searchTerm" name="" placeholder="What are you looking for?">
+                <input type="text" class="searchTerm" name="cari" placeholder="What are you looking for?">
                 <button type="submit" class="searchButton">
                   <img src="{{ asset('img/searchicon.png') }}">
                   <i class="fa fa-search"></i>
@@ -62,60 +62,73 @@
       <div class="list-food-container">
         <p>Main Course</p>
       </div>
-
-      <div class="list-food2">
-      <section id="list-food"> 
-        @if($admins == null)
-          Tulis Null
-        @endif
-        @foreach ($admins as $admin)
-          <div class="foreach-food">
-            <div class="makanan">
-              <div class="gambar">
-                <img src="{{ asset('storage/'.$admin->file) }}" alt="Food.png">
-              </div>
-            <div class="makanan1">
-              <div class="nama-makanan">
-                <p> {{ $admin->namaMenu }}</p>
-              </div>
-              <div class="harga-makanan">
-                <p> Rp{{ $admin->hargaMenu }}</p>  
-              </div>
-              <button type="submit" id="myBtn" class="add-button" data-bs-toggle="modal" data-bs-target="#myModal{{$admin->id}}">
-                <img src="{{ asset('img/add-button1.png') }}">
-              </button>
-            </div>
-            </div>
-          </div>
-
-            {{-- Modal --}}
-            <div id="myModal{{ $admin->id }}" class="modal">
-              <div class="isi-cart">
-                <span class="close">&times;</span>
-                  <div class="img-modal">
-                    <div class="img-css">
-                      <img src="{{ asset('storage/'.$admin->file) }}" alt="">
-                    </div>
-                  </div>
-                  <br>
-                  <div class="nama-makanan-modal">
-                    <p>{{ $admin->namaMenu }}</p>
-                  </div>
-                  <div class="deskripsi-makanan-modal">
-                    <p>Sebuah ayam goreng khas upin ipin yang sangat mengigau selera disetiap sudut</p>
-                  </div>
-                  <div class="harga-makanan-modal">
-                    <p>{{ $admin->hargaMenu }}</p>
-                    <button type="submit" id="noob" class="add-button-modal">
-                      <img src="{{ asset('img/add-button1.png') }}">
-                    </button>
-                  </div>
-              </div>
-            </div>
-            {{-- Penutup Modal --}}
-        @endforeach
+      
+      @if($total == 0)
+        <div class="list-nofood">
+          <p>Tidak ada Menu yang tersedia</p>
+        </div>
         
-      </section>
+      @else
+    @foreach ($admins as $admin)
+      
+      <div class="list-food2">
+        <section id="list-food"> 
+            <div class="foreach-food">
+              <div class="makanan">
+                <div class="gambar">
+                  <img src="{{ asset('storage/'.$admin->file) }}" alt="Food.png">
+                </div>
+              <div class="makanan1">
+                <div class="nama-makanan">
+                  <p> {{ $admin->namaMenu }}</p>
+                </div>
+                <div class="harga-makanan">
+                  <p> Rp{{ $admin->hargaMenu }}</p>  
+                </div>
+                <button type="button" id="myBtn" class="add-button" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $admin->id }}">
+                  <img src="{{ asset('img/add-button1.png') }}">
+                </button>
+              </div>
+              </div>
+            </div>
+                    <!-- Modal -->
+                    <div
+                      class="modal fade"
+                      id="exampleModal{{ $admin->id }}"
+                      tabindex="-1"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="isi-cart">
+                            <button type="button" class="btn" data-bs-dismiss="modal"><span class="close">&times;</span></button>
+                              <div class="img-modal">
+                                <div class="img-css">
+                                  <img src="{{ asset('storage/'.$admin->file) }}" alt="">
+                                </div>
+                              </div>
+                              <br>
+                              <div class="nama-makanan-modal">
+                                <p>{{ $admin->namaMenu }}</p>
+                              </div>
+                              <div class="deskripsi-makanan-modal">
+                                <p>Sebuah ayam goreng khas upin ipin yang sangat mengigau selera disetiap sudut</p>
+                              </div>
+                              <div class="harga-makanan-modal">
+                                <p>{{ $admin->hargaMenu }}</p>  
+                                <button type="submit" id="noob" class="add-button-modal">
+                                  <img src="{{ asset('img/add-button1.png') }}">
+                                </button>
+                                
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+          @endforeach
+          @endif
+        </section>
       </div>
 
       

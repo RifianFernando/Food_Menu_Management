@@ -152,7 +152,6 @@ body:not(.cart){
   display: flex;
   justify-content: flex-start;
   background-color: #f3f3f3;
-  display: flex;
   padding-top: 40px;
   padding-left: 100px;
   font-family: "Prompt";  
@@ -168,6 +167,7 @@ body:not(.cart){
 .list-food2{
   display: flex;
   justify-content: flex-start;
+  background-color: #f3f3f3;
 }
 .makanan{
   width: 500px;
@@ -202,6 +202,17 @@ body:not(.cart){
   float: left;
   padding-left: 80px;
   padding-bottom: 50px;
+}
+.list-nofood{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f3;
+  height: 100vh;
+  padding-left: 100px;
+  font-family: "Prompt";  
+  font-size: 36px;
+  font-weight: 600;
 }
 .nama-makanan{
   font-family: "Poppins";
@@ -239,19 +250,12 @@ body:not(.cart){
 }
 
 /* modal content */
-.modal {
-  display: none; 
-  align-items: center;
-  position: fixed;
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.modal-content:not(.isi-cart){
+  display: flex;
+  width: auto;
+  height: auto;
+  border-radius: 50px;
 }
-
 /* Modal Content */
 .isi-cart {
   background-color: #f3f3f3;
