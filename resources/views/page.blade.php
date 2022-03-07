@@ -47,14 +47,22 @@
 
       <div class="navbartype">
           <div class="type-food">
-            <a href="#food">Food</a>
-            <a href="#drink">Drink</a>
+            <a href="#no-food">Food</a>
+            <a href="#no-food">Drink</a>
           </div>
             <form class="search" action="{{url('/cari')}}" method="GET">
               @csrf
+              <div class="dropdown">
+                <button class="img-buttonfilter"><img class="filter-button-search" src="{{ asset('img/filtersearch.png') }}" alt=""></button>
+                  <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+              </div>
                 <input type="text" class="searchTerm" name="cari" placeholder="What are you looking for?">
                 <button type="submit" class="searchButton">
-                  <img src="{{ asset('img/searchicon.png') }}">
+                  <img  src="{{ asset('img/searchicon.png') }}">
                   <i class="fa fa-search"></i>
               </button> 
             </form>
@@ -64,14 +72,14 @@
       </div>
       
       @if($total == 0)
-        <div class="list-nofood">
+        <div id="no-food"class="list-nofood">
           <p>Tidak ada Menu yang tersedia</p>
         </div>
         
       @else
     @foreach ($admins as $admin)
       
-      <div class="list-food2">
+      <div id="no-food" class="list-food2">
         <section id="list-food"> 
             <div class="foreach-food">
               <div class="makanan">

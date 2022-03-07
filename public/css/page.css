@@ -108,7 +108,10 @@ body:not(.cart){
   font-weight: bold;
   font-size: 48px;
 }
-
+.search img{
+  width: 30px;
+  background-color: #f3f3f3;
+}
 .type-food a{
   text-decoration: none;
   color: #C4C4C4;
@@ -135,10 +138,50 @@ body:not(.cart){
   border-bottom-right-radius: 20px;
   color: #000000;
 }
+.filter-button-search{
+  margin-right: 8px;
+  width: 37px;
+  height: 39px;
+}
+.img-buttonfilter{
+  border: 5px solid #f3f3f3;
+  text-align: center;
+  color: #f3f3f3;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+}
+
+  .dropdown{
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #b5bb81;
+    min-width: auto;
+    position: relative;
+    box-shadow: 0px 8px 16px 0px rgba(206, 175, 2, 0.2);
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: rgb(241, 161, 11);}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}               
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .img-buttonfilter {background-color: #f3f3f3;}
 
 .searchButton {
-  width: 40px;
-  height: 50px;
   border: 5px solid #f3f3f3;
   text-align: center;
   color: #f3f3f3;
