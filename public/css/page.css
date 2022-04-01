@@ -238,13 +238,14 @@ body:not(.cart){
 .gambar{
   display: flex;
   margin-right: 15px;
-  width: 200px;
-  height: 180px;
+  width: 123px;
+  height: 134px;
   margin-top: 10px;
 }
 .gambar img{
-  border-radius: 40px;
+  border-radius: 30px;
 }
+
 .foreach-food{
   display: flex;
   justify-content: center;
@@ -275,12 +276,15 @@ body:not(.cart){
   margin-bottom: 20px;
 }
 .add-button{
-  width: 120px;
-  height: 50px;
-  display: flex;
-  justify-content: flex-end;
-  border: 5px solid #f3f3f3;
+  border: #f3f3f3;
   color: #f3f3f3;
+}
+.add-button img{
+  width: 110px;
+  height: 38px;
+  display: flex;
+
+  justify-content: center;
 }
 .footer{
   position: fixed;

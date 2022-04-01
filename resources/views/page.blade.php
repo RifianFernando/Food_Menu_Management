@@ -17,7 +17,11 @@
           <div class="navbar-right">
               <a href="/userPage">Home</a>
               <a href="">Menu</a>
-              <a href="">Details</a>
+              @if(Auth::user()->username == 'admin')
+                <a href="/createItem">Admin Panel</a>
+              @else
+                <a href="/userPage">Detail</a>
+              @endif
                 @if(Route::has('login'))
                     @auth
                     <form action="{{route('logout')}}" method="POST">
@@ -45,6 +49,7 @@
       </div>
     </section>
 
+    <div class="lol">
       <div class="navbartype">
           <div class="type-food">
             <a href="#no-food">Food</a>
