@@ -106,7 +106,7 @@
             </div>
                     <!-- Modal -->
                     <div
-                      class="modal fade"
+                      class="modal"
                       id="exampleModal{{ $admin->id }}"
                       tabindex="-1"
                       aria-labelledby="exampleModalLabel"
@@ -147,11 +147,30 @@
       
 
       <div class="footer">
-        <button  class="button-cart" style="background: url({{ asset('img/button-cart.png') }})">c</button>
+        <button type="button" class="button-cart" data-toggle="modal" data-target="#exampleModalIn" style="background: url({{ asset('img/button-cart.png') }})">c</button>
       </div>
 
-    <!-- JavaScript Bundle with Popper -->
+            <!-- Modal -->
+            <div
+                class="modal"
+                id="exampleModalIn"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="isi-modal-cart">
+                        <p>paritsialc</p>
+                    </div>
+                  </div>
+            </div>  
+          </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="{{ asset('js/page.js') }}"></script>
 </body>
 </html>
