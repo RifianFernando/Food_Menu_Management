@@ -29,6 +29,7 @@ body:not(.cart){
   display: flex;
   padding: 30px 100px;
   justify-content: space-between;
+  z-index: 1;
 }
 
 .navbar-right {
@@ -47,12 +48,14 @@ body:not(.cart){
 .navbar-button{
   background: transparent;
   border: none !important;
-  font-size:0;
+  display: grid;
+}
+.navbar-button img{
+  width: 180px;
+  padding-top: 20px;
 }
 .navbar-login{
-  width: 150px;
-  height: 40px;
-  border-radius: 30px;
+  display: flex;
 }
 
 .hero-button,
@@ -121,6 +124,7 @@ body:not(.cart){
 
 .search { 
   width: 100%;
+  height: 200px;
   position: relative;
   display: flex;
   justify-content: end;
@@ -153,25 +157,26 @@ body:not(.cart){
   border: none;
 }
 
-  .dropdown{
-    position: relative;
-    display: inline-block;
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #b5bb81;
-    min-width: auto;
-    position: relative;
-    box-shadow: 0px 8px 16px 0px rgba(206, 175, 2, 0.2);
-  }
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
+.dropdown{
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #b5bb81;
+  min-width: auto;
+  position: relative;
+  box-shadow: 0px 8px 16px 0px rgba(206, 175, 2, 0.2);
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {background-color: rgb(241, 161, 11);}
   
@@ -188,6 +193,9 @@ body:not(.cart){
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+  display: flex;
+  align-items: flex-start;
+  height: 25px;
 }
 
 /* Food List */
