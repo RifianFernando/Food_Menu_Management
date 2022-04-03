@@ -18,7 +18,7 @@
               <a href="/userPage">Home</a>
               <a href="">Menu</a>
               @if(Auth::user()->username == 'admin')
-                <a href="/createItem">Admin Panel</a>
+                <a href="{{ route('adminDashboard') }}">Admin Panel</a>
               @else
                 <a href="/userPage">Detail</a>
               @endif
@@ -49,7 +49,6 @@
       </div>
     </section>
 
-    <div class="lol">
       <div class="navbartype">
           <div class="type-food">
             <a href="#no-food">Food</a>
@@ -82,10 +81,9 @@
         </div>
         
       @else
+    <section id="list-food">
     @foreach ($admins as $admin)
-      
-      <div id="no-food" class="list-food2">
-        <section id="list-food"> 
+       
             <div class="foreach-food">
               <div class="makanan">
                 <div class="gambar">
@@ -105,13 +103,9 @@
               </div>
             </div>
                     <!-- Modal -->
-                    <div
-                      class="modal"
-                      id="exampleModal{{ $admin->id }}"
-                      tabindex="-1"
-                      aria-labelledby="exampleModalLabel"
-                      aria-hidden="true"
-                    >
+                    <div class="modal" id="exampleModal{{ $admin->id }}" tabindex="-1"
+                      aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                           <div class="isi-cart">
@@ -142,35 +136,27 @@
           @endforeach
           @endif
         </section>
-      </div>
-
       
 
       <div class="footer">
-        <button type="button" class="button-cart" data-toggle="modal" data-target="#exampleModalIn" style="background: url({{ asset('img/button-cart.png') }})">c</button>
+        <button type="button" id="button_cart" class="button-cart" data-toggle="modal" data-target="#exampleModalIn" style="background: url({{ asset('img/button-cart.png') }})">c</button>
       </div>
 
-            <!-- Modal -->
-            <div
-                class="modal"
-                id="exampleModalIn"
-                tabindex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="isi-modal-cart">
-                        <p>paritsialc</p>
-                    </div>
-                  </div>
-            </div>  
-          </div>
+        <!-- Modal -->
+        <div class="modal-container" id="modal_container">
+          <div class="modal-cart">
+                  <button id="close_cart"><span>&times;</span></button>
+                  <h1>Ini modal</h1>
+          </div> 
+        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="{{ asset('js/page.js') }}"></script>
+  <script src="{{ asset('js/page.js')}}"></script>
+
+    
 </body>
 </html>

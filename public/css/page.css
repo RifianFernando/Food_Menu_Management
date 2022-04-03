@@ -7,11 +7,13 @@
   --dark-blue: #09172d;
 }
 
-body:not(.cart){
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
+
 
 .navbar-container a {
   text-decoration: none;
@@ -88,13 +90,14 @@ body:not(.cart){
 .navbartype{
   display: flex;
   background-color: #f3f3f3;
-  padding: 10px 100px;
+  padding: 10px 90px;
   justify-content: space-between;
 }
 
 .type-food {
   display: flex;
   gap: 48px;
+  width: 600px;
   font-family: "Prompt";
   padding-bottom: 2px;
 }
@@ -124,7 +127,6 @@ body:not(.cart){
 
 .search { 
   width: 100%;
-  height: 200px;
   position: relative;
   display: flex;
   justify-content: end;
@@ -155,11 +157,13 @@ body:not(.cart){
   cursor: pointer;
   font-size: 20px;
   border: none;
+  overflow: hidden;
 }
 
 .dropdown{
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .dropdown-content {
@@ -167,6 +171,7 @@ body:not(.cart){
   position: absolute;
   background-color: #b5bb81;
   min-width: auto;
+  overflow: hidden;
   position: relative;
   box-shadow: 0px 8px 16px 0px rgba(206, 175, 2, 0.2);
 }
@@ -195,7 +200,7 @@ body:not(.cart){
   font-size: 20px;
   display: flex;
   align-items: flex-start;
-  height: 25px;
+  height: 50px;
 }
 
 /* Food List */
@@ -215,11 +220,6 @@ body:not(.cart){
   background-color: #f3f3f3;
 }
 
-.list-food2{
-  display: flex;
-  justify-content: flex-start;
-  background-color: #f3f3f3;
-}
 .makanan{
   width: 500px;
   height: 250px;
@@ -238,7 +238,7 @@ body:not(.cart){
 .gambar{
   display: flex;
   margin-right: 15px;
-  width: 123px;
+  width: 220px;
   height: 134px;
   margin-top: 10px;
 }
@@ -306,6 +306,9 @@ body:not(.cart){
 /* modal content */
 .modal-content:not(.isi-cart){
   display: flex;
+  margin-left: 90px;
+  justify-content: center;
+  align-items: center;
   width: auto;
   height: auto;
   border-radius: 50px;
@@ -314,12 +317,13 @@ body:not(.cart){
 .isi-cart {
   background-color: #f3f3f3;
   margin: auto;
-  padding: 20px;
   border: 1px solid #C4C4C4;
-  height: 468px;
+  height: auto;
   width: 370px;
   border-radius: 50px;
+  overflow: auto;
 }
+
 /* The Close Button */
 .close {
   color: #aaaaaa;
@@ -336,29 +340,27 @@ body:not(.cart){
 }
 
 .img-modal{
-  width: 80%;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
-.img-css img{
+.img-css{
   display: flex;
-  height: 200px;
-  width: 250px;
-  margin-left: 30px;
+  margin-left: 40px;
+  height: 210px;
+  width: 280px;
   border-radius: 10px;
 }
 .nama-makanan-modal{
   font-family: "Poppins";
   font-size: 18px;
   font-weight: 600;
-  padding-left: 15px;
+  padding-left: 25px;
 }
 .deskripsi-makanan-modal{
   font-family: "Poppins";
   font-size: 14px;
   font-weight: 0;
-  padding-left: 15px;
+  padding: 5px 25px;
 }
 .harga-makanan-modal{
   display: flex;
@@ -391,3 +393,34 @@ body:not(.cart){
   justify-content: flex-end;
   align-items: flex-end;
 }
+
+/* footer */
+.modal-container{
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modal-container.show{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal-cart {
+  background-color: #f3f3f3;
+  padding: 20px 40px;
+  width : 700px;
+  max-width: 100%;
+  height: 600px;
+  border-radius: 50px;
+  box-shadow: 0px 2px 4px rgb(0, 0, 0.3);
+  text-align: center;
+}
+
