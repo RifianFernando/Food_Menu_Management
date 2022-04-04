@@ -96,20 +96,20 @@
                 <div class="harga-makanan">
                   <p> Rp{{ $admin->hargaMenu }}</p>
                 </div>
-                <button type="button" id="myBtn" class="add-button" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $admin->id }}">
+                <button type="button" onclick="myFunction()" id="myBtn" class="add-button" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $admin->id }}">
                   <img src="{{ asset('img/add-button1.png') }}">
                 </button>
               </div>
               </div>
             </div>
                     <!-- Modal -->
-                    <div class="modal" id="exampleModal{{ $admin->id }}" tabindex="-1"
+                    <div class="modal fade" id="exampleModal{{ $admin->id }}" tabindex="-1"
                       aria-labelledby="exampleModalLabel" aria-hidden="true">
 
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                           <div class="isi-cart">
-                            <button type="button" class="btn" data-bs-dismiss="modal"><span class="close">&times;</span></button>
+                            <button type="button" onclick="myFunction()"class="btn" id="closing" data-bs-dismiss="modal"><span class="close">&times;</span></button>
                               <div class="img-modal">
                                 <div class="img-css">
                                   <img src="{{ asset('storage/'.$admin->file) }}" alt="">
@@ -175,59 +175,6 @@
                           </button>
                         </div>
                     </div>
-
-                    <div class="isi-seluruh-cart">
-                      <div class="gambar-makanan">
-                        <img src="{{ asset('img/pasta1.png') }}" alt="">
-                      </div>
-                      <div class="judul-dan-harga">
-                        <div class="judul-makanan">
-                          <p>Spaghetti aglio aglio</p>
-                        </div>
-                        <div class="harga">
-                          62.000
-                        </div>
-                      </div>
-
-                      <div class="jumlah-kurang">
-                        <button type="button" class="tanda-tambah">
-                          +
-                        </button>
-                        <div class="box-jumlah">
-                          <p>1</p>
-                        </div>
-                        <button type="button" class="tanda-tambah">
-                          -
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="isi-seluruh-cart">
-                      <div class="gambar-makanan">
-                        <img src="{{ asset('img/pasta1.png') }}" alt="">
-                      </div>
-                      <div class="judul-dan-harga">
-                        <div class="judul-makanan">
-                          <p>Spaghetti aglio aglio</p>
-                        </div>
-                        <div class="harga">
-                          62.000
-                        </div>
-                      </div>
-
-                      <div class="jumlah-kurang">
-                        <button type="button" class="tanda-tambah">
-                          +
-                        </button>
-                        <div class="box-jumlah">
-                          <p>1</p>
-                        </div>
-                        <button type="button" class="tanda-tambah">
-                          -
-                        </button>
-                      </div>
-                    </div>
-
 
               </div>
 
