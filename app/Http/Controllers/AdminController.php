@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\QuantityProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -98,5 +99,24 @@ class AdminController extends Controller
         ->where('namaMenu','like',"%".$cari."%")->paginate();
 
     return view('page',['admins' => $admins, 'total' => $total]);
+    }
+
+    public function addToCart(Request $request, $id){
+        $user = Auth::user()->id;
+        $admins = Admin::find($id);
+        $id_barang = $admins->id;
+        $quantity_table = QuantityProduct::find($user);
+        dd($quantity_table);
+        if($quantity_table == null){
+            QuantityProduct::create([
+                'id_barang' => $id_barang,
+                'quantity' => 1
+            ]);
+        }else{
+            $quantity_table->quantity = $quantity_table->quantity + 1;
+            $quantity_table->save();
+        }
+
+        return view('page',['admins' => $admins]);
     }
 }

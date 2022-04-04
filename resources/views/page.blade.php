@@ -37,7 +37,6 @@
                         <a href="/login"><img src="{{ asset('img/ButtonLogin.png') }}" alt=""></a>
                       </div>
                     @endif
-
                   @endauth
 
 
@@ -124,9 +123,12 @@
                               </div>
                               <div class="harga-makanan-modal">
                                 <p>{{ $admin->hargaMenu }}</p>
-                                <button type="submit" id="noob" class="add-button-modal">
-                                  <img src="{{ asset('img/add-button1.png') }}">
-                                </button>
+                                <form action="{{ route('addToCart', ['id'=>$admin->id]) }}" method="post">
+                                  @csrf
+                                    <button type="submit" id="noob" class="add-button-modal">
+                                      <img src="{{ asset('img/add-button1.png') }}">
+                                    </button>
+                                </form>
 
                               </div>
                           </div>
@@ -150,6 +152,7 @@
                     <p>Shopping Cart</p>
                   </div>
                   <div class="area-cart">
+                    
                       <div class="isi-seluruh-cart">
                         <div class="gambar-makanan">
                           <img src="{{ asset('img/pasta1.png') }}" alt="">
