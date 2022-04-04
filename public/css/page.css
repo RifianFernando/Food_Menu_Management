@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Linden+Hill&family=Prompt:wght@700&family=Rochester&display=swap');
 
 :root {
   --white: #f3f3f3;
@@ -394,7 +395,8 @@
   align-items: flex-end;
 }
 
-/* footer */
+
+/* Shopping Cart */
 .modal-container{
   pointer-events: none;
   opacity: 0;
@@ -416,12 +418,74 @@
 
 .modal-cart {
   background-color: #f3f3f3;
+  border-color: #C4C4C4;
   padding: 20px 40px;
   width : 700px;
   max-width: 100%;
   height: 600px;
-  border-radius: 50px;
+  border-radius: 46px;
   box-shadow: 0px 2px 4px rgb(0, 0, 0.3);
   text-align: center;
+}
+.isi-seluruh-cart{
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-style: solid;
+  border-color: #C4C4C4;
+  border-radius: 34px;
+  height: 130px;
+  width: 600px;
+}
+#close_cart{
+  margin-left: 600px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+}
+#close_cart span{
+  font-size: large;
+}
+.judul{
+  font-size: 48px;
+  font-weight: bold;
+  font-family: "Prompt";
+  gap: 10px;
+}
+
+.gambar-makanan{
+  margin-left: 40px;
+}
+.judul-dan-harga{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 30px;
+}
+.jumlah-kurang{
+  display: inline-flex;
+  margin-top: 50px;
+  margin-left: 150px;
+  flex-direction: row;
+  gap: 5px;
+}
+.box-jumlah{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  width: 55px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Prompt";
+  background-color: #ffff;
+  border-radius: 18px;
+}
+.box-jumlah p{
+  margin-bottom: 0px;
 }
 

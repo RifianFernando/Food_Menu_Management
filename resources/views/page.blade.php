@@ -145,8 +145,36 @@
         <!-- Modal -->
         <div class="modal-container" id="modal_container">
           <div class="modal-cart">
-                  <button id="close_cart"><span>&times;</span></button>
-                  <h1>Ini modal</h1>
+                  <button id="close_cart"><span>X</span></button>
+                  <div class="judul">
+                    <p>Shopping Cart</p>
+                  </div>
+                  <div class="isi-seluruh-cart">
+                    <div class="gambar-makanan">
+                      <img src="{{ asset('img/pasta1.png') }}" alt="">
+                    </div>
+                    <div class="judul-dan-harga">
+                      <div class="judul-makanan">
+                        <p>Spaghetti aglio aglio</p>
+                      </div>
+                      <div class="harga">
+                        62.000
+                      </div>
+                    </div>
+                    
+                    <div class="jumlah-kurang">
+                      <div class="tanda-tambah">
+                        +
+                      </div>
+                      <div class="box-jumlah">
+                        <p>1</p>
+                      </div>
+                      <div class="tanda-kurang">
+                        -
+                      </div>
+                    </div>
+
+                  </div>
           </div> 
         </div>
 

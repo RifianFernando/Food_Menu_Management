@@ -28,7 +28,7 @@
                             @csrf
 
                             <div class="content">
-                                <label for="username"><b>Username</b></label>
+                                <label for="username"><b>Username or email</b></label>
 
                                 <div class="username">
                                     <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>

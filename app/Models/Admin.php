@@ -16,4 +16,8 @@ class Admin extends Model
         'deskripsiMenu',
         'hargaMenu'
     ];
+
+    public function quantityProduct() {
+        return $this->belongsTo(QuantityProduct::class);
+    }
 }
