@@ -10,7 +10,7 @@
 <body>
 <div class="loginpage">
     <div class="bg">
-        <img src="/img/bglogin.png" alt="" >
+        <img src="/img/bglogin.png" alt="" height="100%" >
     </div>
 
     <div class="container">

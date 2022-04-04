@@ -8,18 +8,18 @@
     background-color: rgb(229, 229, 229);
 }
 
-.loginpage{
+.registerpage{
     display: flex;
     flex-direction: row;
 }
 
 .container{
     margin-left:20rem;
-    margin-top: 10rem;
+    margin-top: 2rem;
 }
 
 .judul{
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
 .judul b{
@@ -35,27 +35,21 @@ input{
     padding-left: 20px;
     padding-right: 20px;
     width: 540px;
-    height: 60px;
+    height: 50px;
     font-size: 25px;
     background-color:rgb(255, 255, 255);
     border: 1.5px solid rgb(197, 197, 197);
 }
 
-.content .username, .content .password{
-    margin-bottom: 30px;
+.container input{
+    margin-bottom: 40px;
 }
 
-.content .forgot{
-    margin-left: 430px;
-    margin-bottom: 20px;
+.date input{
+    color: grey;
 }
 
-.content .forgot a{
-    text-decoration: none;
-    color: black;
-}
-
-.button .btnlogin{
+.btnregister{
     border-radius: 20px;
     padding: 5px 80px;
     background-color: rgb(255, 103, 55);
@@ -63,15 +57,3 @@ input{
     border: none;
     font-size: 20px;
 }
-
-.button .btnregister{
-    border-radius: 20px;
-    margin-left: 6rem;
-    padding: 5px 80px;
-    background-color:rgb(255, 255, 255);
-    color: rgb(255, 103, 55);
-    border: 2px solid rgb(255, 103, 55);
-    font-size: 20px;
-    text-decoration: none;
-}
-
