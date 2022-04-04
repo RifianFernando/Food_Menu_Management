@@ -145,36 +145,127 @@
         <!-- Modal -->
         <div class="modal-container" id="modal_container">
           <div class="modal-cart">
-                  <button id="close_cart"><span>X</span></button>
+                  <button id="close_cart">X</button>
                   <div class="judul">
                     <p>Shopping Cart</p>
                   </div>
-                  <div class="isi-seluruh-cart">
-                    <div class="gambar-makanan">
-                      <img src="{{ asset('img/pasta1.png') }}" alt="">
+                  <div class="area-cart">
+                      <div class="isi-seluruh-cart">
+                        <div class="gambar-makanan">
+                          <img src="{{ asset('img/pasta1.png') }}" alt="">
+                        </div>
+                        <div class="judul-dan-harga">
+                          <div class="judul-makanan">
+                            <p>Spaghetti aglio aglio</p>
+                          </div>
+                          <div class="harga">
+                            62.000
+                          </div>
+                        </div>
+                        
+                        <div class="jumlah-kurang">
+                          <button type="button" class="tanda-tambah">
+                            +
+                          </button>
+                          <div class="box-jumlah">
+                            <p>1</p>
+                          </div>
+                          <button type="button" class="tanda-tambah">
+                            -
+                          </button>
+                        </div>
                     </div>
-                    <div class="judul-dan-harga">
-                      <div class="judul-makanan">
-                        <p>Spaghetti aglio aglio</p>
+
+                    <div class="isi-seluruh-cart">
+                      <div class="gambar-makanan">
+                        <img src="{{ asset('img/pasta1.png') }}" alt="">
                       </div>
-                      <div class="harga">
-                        62.000
+                      <div class="judul-dan-harga">
+                        <div class="judul-makanan">
+                          <p>Spaghetti aglio aglio</p>
+                        </div>
+                        <div class="harga">
+                          62.000
+                        </div>
                       </div>
-                    </div>
-                    
-                    <div class="jumlah-kurang">
-                      <div class="tanda-tambah">
-                        +
-                      </div>
-                      <div class="box-jumlah">
-                        <p>1</p>
-                      </div>
-                      <div class="tanda-kurang">
-                        -
+                      
+                      <div class="jumlah-kurang">
+                        <button type="button" class="tanda-tambah">
+                          +
+                        </button>
+                        <div class="box-jumlah">
+                          <p>1</p>
+                        </div>
+                        <button type="button" class="tanda-tambah">
+                          -
+                        </button>
                       </div>
                     </div>
 
+                    <div class="isi-seluruh-cart">
+                      <div class="gambar-makanan">
+                        <img src="{{ asset('img/pasta1.png') }}" alt="">
+                      </div>
+                      <div class="judul-dan-harga">
+                        <div class="judul-makanan">
+                          <p>Spaghetti aglio aglio</p>
+                        </div>
+                        <div class="harga">
+                          62.000
+                        </div>
+                      </div>
+                      
+                      <div class="jumlah-kurang">
+                        <button type="button" class="tanda-tambah">
+                          +
+                        </button>
+                        <div class="box-jumlah">
+                          <p>1</p>
+                        </div>
+                        <button type="button" class="tanda-tambah">
+                          -
+                        </button>
+                      </div>
+                    </div>
+                    
+
+              </div>
+                
+              <form class="redeem-and-summary">
+                <input type="text" class="redeem" name="redeem" placeholder=" Enter Promotional Code">
+                <button type="submit" class="button-checkout">Redeem</button>
+              </form>
+              <div class="garis-batas">
+              </div>
+              <div class="Summary">
+                <div class="title-summary">
+                  <p>Summary</p>  
+                </div>
+                <div class="subtotal">
+                  <div class="total">
+                    <p>Subtotal</p>
                   </div>
+                  <div class="harga-subtotal">
+                    <p>Rp. 62.000</p>
+                  </div>
+                </div>
+                <div class="charge">
+                  <div class="total">
+                    <p>Service Charge (10%)</p>
+                  </div>
+                  <div class="harga-subtotal">
+                    <p>Rp. 10.800</p>
+                </div>
+                <div class="total">
+                  <div class="total">
+                    <p>Total price</p>
+                  </div>
+                  <div class="harga-subtotal">
+                    <p>Rp. 62.000</p>
+                </div>
+                </div>  
+              </div>
+
           </div> 
         </div>
 

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Linden+Hill&family=Prompt:wght@700&family=Rochester&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Linden+Hill&family=Prompt:wght@600;700&family=Rochester&display=swap');
 
 :root {
   --white: #f3f3f3;
@@ -30,7 +31,7 @@
   position: fixed;
   width: 100%;
   display: flex;
-  padding: 30px 100px;
+  padding: 20px 100px;
   justify-content: space-between;
   z-index: 1;
 }
@@ -410,7 +411,7 @@
 .modal-container.show{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   position: fixed;
   pointer-events: auto;
   opacity: 1;
@@ -422,10 +423,12 @@
   padding: 20px 40px;
   width : 700px;
   max-width: 100%;
-  height: 600px;
+  height: 800px;
   border-radius: 46px;
+  margin-bottom: 20px;
   box-shadow: 0px 2px 4px rgb(0, 0, 0.3);
   text-align: center;
+  overflow: hidden;
 }
 .isi-seluruh-cart{
   display: inline-flex;
@@ -434,16 +437,19 @@
   align-items: center;
   border-style: solid;
   border-color: #C4C4C4;
+  margin-top: 20px;
   border-radius: 34px;
   height: 130px;
   width: 600px;
 }
 #close_cart{
   margin-left: 600px;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-color: transparent;
   border: none;
+  font-size: 30px;
+  overflow: hidden;
 }
 #close_cart span{
   font-size: large;
@@ -451,24 +457,56 @@
 .judul{
   font-size: 48px;
   font-weight: bold;
-  font-family: "Prompt";
-  gap: 10px;
+  font-family: "Prompt"; 
+}
+.judul p{
+  margin: 0px 0px 0px 0px; 
+}
+.area-cart{
+  flex-direction: column;
+  height: 400px;
+  width: 630px;
+  overflow-y: scroll;
+  /* border-bottom: rgb(241, 161, 11, 0.5);
+  border-top: #f3f3f3;
+  border-left: #f3f3f3;
+  border-right: #f3f3f3; */
+  border-style: none;
+}
+
+.area-cart::-webkit-scrollbar {
+  background-color: #f3f3f3;
+  width: 5px;
+}
+
+.area-cart::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
 }
 
 .gambar-makanan{
   margin-left: 40px;
 }
 .judul-dan-harga{
+  width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   margin-left: 30px;
 }
+.judul-makanan{
+  font-family: "Prompt";
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+}
 .jumlah-kurang{
   display: inline-flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 50px;
-  margin-left: 150px;
+  margin-left: 80px;
   flex-direction: row;
   gap: 5px;
 }
@@ -488,4 +526,99 @@
 .box-jumlah p{
   margin-bottom: 0px;
 }
+.tanda-tambah{
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  color: #FF6737;
+  border-radius: 100px;
+  border-color: #FF6737;
+  border-style: solid;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.redeem-and-summary{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.redeem, select, textarea{
+  font-family: "Prompt";
+  font-size: 14px;
+  font-weight: 200;
+  border-radius: 45px;
+  width: 399px;
+  height: 35px;
+  border: 1px solid #C4C4C4; 
+  display: flex;
+}
+
+.redeem[type=text]:focus{
+  border: 1px solid orange;
+  outline: none;   
+}
+
+.button-checkout{
+  background-color: #FF6737;
+  border-style: none;
+  border-radius: 45px;
+  width: 130px;
+  height: 35px;
+  margin-left: 15px;
+  font-family: "Prompt";
+  color: #f3f3f3;
+  font-weight: 100;
+}
+.button-checkout:hover{
+  background-color: #d46b42;
+  border-color: #000000;
+}
+.garis-batas{
+  border-style: solid;
+  border-color: #C4C4C4;
+  border-width: 2px;
+  margin-top: 20px;
+  margin-left: 10px;
+  width: 98%;
+  height: 1px;
+}
+.Summary{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+  font-family: "Prompt";
+}
+.title-summary{
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.subtotal{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 18px; 
+}
+.charge{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-weight: 700;
+  font-size: 18px; 
+} 
+.total{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-weight: 700;
+  font-size: 18px; 
+}
