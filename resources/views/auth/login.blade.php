@@ -78,10 +78,7 @@
                                         {{ __('Sign In') }}
                                     </button>
 
-                                    <form action="{{url('/register')}}">
-                                        <button type="submit" class="btnregister">
-                                            {{ __('Sign Up') }}
-                                        </button>
+                                    <a class="btnregister" href="/register">Sign Up</a>
                                     </form>
 
                             </div>

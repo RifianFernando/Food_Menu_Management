@@ -71,5 +71,6 @@ input{
     color: rgb(255, 103, 55);
     border: 2px solid rgb(255, 103, 55);
     font-size: 20px;
+    text-decoration: none;
 }
 
