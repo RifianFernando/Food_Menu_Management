@@ -5,6 +5,7 @@
     margin: 0rem;
     padding: 0rem;
     font-family: 'Poppins';
+    background-color: rgb(229, 229, 229);
 }
 
 .loginpage{
@@ -24,3 +25,51 @@
 .judul b{
     font-size: 48px;
 }
+
+label{
+    font-size: 25px;
+}
+
+input{
+    border-radius: 30px;
+    padding-left: 20px;
+    width: 540px;
+    height: 60px;
+    font-size: 25px;
+    background-color:rgb(255, 255, 255);
+    border: 1.5px solid rgb(197, 197, 197);
+}
+
+.content .username, .content .password{
+    margin-bottom: 30px;
+}
+
+.content .forgot{
+    margin-left: 430px;
+    margin-bottom: 20px;
+}
+
+.content .forgot a{
+    text-decoration: none;
+    color: black;
+}
+
+.button .btnlogin{
+    border-radius: 20px;
+    padding: 5px 80px;
+    background-color: rgb(255, 103, 55);
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+.button .btnregister{
+    border-radius: 20px;
+    margin-left: 6rem;
+    padding: 5px 80px;
+    background-color:rgb(255, 255, 255);
+    color: rgb(255, 103, 55);
+    border: 2px solid rgb(255, 103, 55);
+    font-size: 20px;
+}
+
