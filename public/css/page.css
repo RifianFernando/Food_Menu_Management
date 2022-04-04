@@ -610,13 +610,15 @@
 }
 .charge{
   display: flex;
+  width: 100%;
   justify-content: space-between;
   flex-direction: row;
   font-weight: 700;
   font-size: 18px; 
 } 
-.total{
+.total-summary{
   display: flex;
+  width: 100%;
   justify-content: space-between;
   flex-direction: row;
   font-weight: 700;

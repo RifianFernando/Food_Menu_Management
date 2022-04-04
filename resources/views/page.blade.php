@@ -16,7 +16,7 @@
         </div>
           <div class="navbar-right">
               <a href="/userPage">Home</a>
-              <a href="">Menu</a>
+              <a href="#list-food-container">Menu</a>
               @if(Auth::user()->username == 'admin')
                 <a href="{{ route('adminDashboard') }}">Admin Panel</a>
               @else
@@ -71,7 +71,7 @@
               </button> 
             </form>
       </div>
-      <div class="list-food-container">
+      <div class="list-food-container" id="list-food-container">
         <p>Main Course</p>
       </div>
       
@@ -242,27 +242,28 @@
                   <p>Summary</p>  
                 </div>
                 <div class="subtotal">
-                  <div class="total">
-                    <p>Subtotal</p>
-                  </div>
-                  <div class="harga-subtotal">
-                    <p>Rp. 62.000</p>
-                  </div>
+                    <div class="total">
+                      <p>Subtotal</p>
+                    </div>
+                    <div class="harga-subtotal">
+                      <p>Rp. 62.000</p>
+                    </div>
                 </div>
                 <div class="charge">
-                  <div class="total">
-                    <p>Service Charge (10%)</p>
-                  </div>
-                  <div class="harga-subtotal">
-                    <p>Rp. 10.800</p>
+                    <div class="total">
+                      <p>Service Charge (10%)</p>
+                    </div>
+                    <div class="harga-subtotal">
+                      <p>Rp. 10.800</p>
+                    </div>
                 </div>
-                <div class="total">
-                  <div class="total">
-                    <p>Total price</p>
-                  </div>
-                  <div class="harga-subtotal">
-                    <p>Rp. 62.000</p>
-                </div>
+                <div class="total-summary">
+                    <div class="total">
+                      <p>Total price</p>
+                    </div>
+                    <div class="harga-subtotal">
+                      <p>Rp. 62.000</p>
+                    </div>
                 </div>  
               </div>
 
