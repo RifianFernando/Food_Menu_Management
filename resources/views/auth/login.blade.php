@@ -28,7 +28,7 @@
                             @csrf
 
                             <div class="content">
-                                <label for="username"><b>Username or email</b></label>
+                                <label for="username">Username or email</label>
 
                                 <div class="username">
                                     <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
@@ -42,7 +42,7 @@
                             </div>
 
                             <div class="content">
-                                <label for="password" class="col-md-4 col-form-label text-md-end"><b>Password</b></label>
+                                <label for="password" class="col-md-4 col-form-label text-md-end">Password</label>
 
                                 <div class="password">
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">

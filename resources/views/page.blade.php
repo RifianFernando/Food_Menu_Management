@@ -29,7 +29,7 @@
                         <div class="navbar-login">
                         <button class="navbar-button">
                           <img src="{{ asset('img/Logout.png') }}" alt="">
-                        </button> 
+                        </button>
                       </div>
                     </form>
                     @else
@@ -37,13 +37,13 @@
                         <a href="/login"><img src="{{ asset('img/ButtonLogin.png') }}" alt=""></a>
                       </div>
                     @endif
-                
+
                   @endauth
-                
-                 
+
+
         </div>
     </div>
-    
+
     <section id="Hero">
       <div class="hero-container">
       </div>
@@ -68,22 +68,22 @@
                 <button type="submit" class="searchButton">
                   <img  src="{{ asset('img/searchicon.png') }}">
                   <i class="fa fa-search"></i>
-              </button> 
+              </button>
             </form>
       </div>
       <div class="list-food-container" id="list-food-container">
         <p>Main Course</p>
       </div>
-      
+
       @if($total == 0)
         <div id="no-food"class="list-nofood">
           <p>Tidak ada Menu yang tersedia</p>
         </div>
-        
+
       @else
     <section id="list-food">
     @foreach ($admins as $admin)
-       
+
             <div class="foreach-food">
               <div class="makanan">
                 <div class="gambar">
@@ -94,7 +94,7 @@
                   <p> {{ $admin->namaMenu }}</p>
                 </div>
                 <div class="harga-makanan">
-                  <p> Rp{{ $admin->hargaMenu }}</p>  
+                  <p> Rp{{ $admin->hargaMenu }}</p>
                 </div>
                 <button type="button" id="myBtn" class="add-button" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $admin->id }}">
                   <img src="{{ asset('img/add-button1.png') }}">
@@ -105,7 +105,7 @@
                     <!-- Modal -->
                     <div class="modal" id="exampleModal{{ $admin->id }}" tabindex="-1"
                       aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      
+
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                           <div class="isi-cart">
@@ -120,14 +120,14 @@
                                 <p>{{ $admin->namaMenu }}</p>
                               </div>
                               <div class="deskripsi-makanan-modal">
-                                <p>Sebuah ayam goreng khas upin ipin yang sangat mengigau selera disetiap sudut</p>
+                                <p>{{$admin->deskripsiMenu}}</p>
                               </div>
                               <div class="harga-makanan-modal">
-                                <p>{{ $admin->hargaMenu }}</p>  
+                                <p>{{ $admin->hargaMenu }}</p>
                                 <button type="submit" id="noob" class="add-button-modal">
                                   <img src="{{ asset('img/add-button1.png') }}">
                                 </button>
-                                
+
                               </div>
                           </div>
                         </div>
@@ -136,7 +136,7 @@
           @endforeach
           @endif
         </section>
-      
+
 
       <div class="footer">
         <button type="button" id="button_cart" class="button-cart" data-toggle="modal" data-target="#exampleModalIn" style="background: url({{ asset('img/button-cart.png') }})">c</button>
@@ -162,7 +162,7 @@
                             62.000
                           </div>
                         </div>
-                        
+
                         <div class="jumlah-kurang">
                           <button type="button" class="tanda-tambah">
                             +
@@ -188,7 +188,7 @@
                           62.000
                         </div>
                       </div>
-                      
+
                       <div class="jumlah-kurang">
                         <button type="button" class="tanda-tambah">
                           +
@@ -214,7 +214,7 @@
                           62.000
                         </div>
                       </div>
-                      
+
                       <div class="jumlah-kurang">
                         <button type="button" class="tanda-tambah">
                           +
@@ -227,10 +227,10 @@
                         </button>
                       </div>
                     </div>
-                    
+
 
               </div>
-                
+
               <form class="redeem-and-summary">
                 <input type="text" class="redeem" name="redeem" placeholder=" Enter Promotional Code">
                 <button type="submit" class="button-checkout">Redeem</button>
@@ -239,7 +239,7 @@
               </div>
               <div class="Summary">
                 <div class="title-summary">
-                  <p>Summary</p>  
+                  <p>Summary</p>
                 </div>
                 <div class="subtotal">
                     <div class="total">
@@ -264,10 +264,10 @@
                     <div class="harga-subtotal">
                       <p>Rp. 62.000</p>
                     </div>
-                </div>  
+                </div>
               </div>
 
-          </div> 
+          </div>
         </div>
 
 
@@ -277,6 +277,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <script src="{{ asset('js/page.js')}}"></script>
 
-    
+
 </body>
 </html>

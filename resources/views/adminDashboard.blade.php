@@ -10,39 +10,6 @@
 </head>
 <body>
 
-    {{-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{{ route('userPage') }}">Food Menu Management</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/admin">Dashboard</a>
-              </li>
-
-              <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                   Log Out
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                        {{ __('Click') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-            </li>
-          </div>
-        </div>
-      </nav> --}}
-
       <div class="navbar-container">
         <div class="navbar-left">
           <a href="/userPage">Lana's Western Food</a>
@@ -76,16 +43,18 @@
 
         </div>
     </div>
-    <br><br><br><br><br>
 
-    <table class="table table-dark table-striped" id="tabel">
+    <h1>Admin Dashboard</h1>
+    <hr style="border: 1px solid black">
+
+    <table class="table table-white table-striped" id="tabel">
         <thead>
           <tr>
             <th scope="col">id</th>
-            {{-- <th scope="col">Gambar</th> --}}
+            <th scope="col">Gambar</th>
             <th scope="col">Nama</th>
             <th scope="col">Jenis</th>
-            {{-- <th scope="col">Deskripsi Menu</th> --}}
+            <th scope="col">Deskripsi Menu</th>
             <th scope="col">Harga</th>
             <th scope="col">Action</th>
           </tr>
@@ -94,19 +63,21 @@
             @foreach ($admins as $admin)
                 <tr>
                 <th scope="row">{{ $admin->id }}</th>
-                {{-- <td><img width="300px" src="{{ asset('storage/'.$admin->file) }}"></td> --}}
+                <td><img width="300px" src="{{ asset('storage/'.$admin->file) }}" style="border-radius: 30px"></td>
                 <td>{{ $admin->namaMenu }}</td>
                 <td>{{ $admin->kategoriMenu }}</td>
-                {{-- <td>{{ $admin->deskripsiMenu }}</td> --}}
+                <td>{{ $admin->deskripsiMenu }}</td>
                 <td>{{ $admin->hargaMenu }}</td>
                 <td>
-                    <a href="{{route('updateItem', ['id'=>$admin->id])}}"><button type="submit" class="btn btn-primary">Update</button></a>
+                    <div class="btnaction">
+                        <a href="{{route('updateItem', ['id'=>$admin->id])}}"><button type="submit" class="btn btn-primary">Edit</button></a>
 
-                    <form action="{{route('delete', ['id' => $admin->id])}}" method="post">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+                        <form action="{{route('delete', ['id' => $admin->id])}}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
                 </td>
 
                 </tr>
@@ -115,9 +86,9 @@
       </table>
 
 
-    <form action="{{route('createItem')}}">
+    <form action="{{route('createItem')}}" class="btnadd">
         @csrf
-        <button type="submit" class="btn btn-primary">+Add New</button>
+        <button type="submit" class="btn">Add Menu</button>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

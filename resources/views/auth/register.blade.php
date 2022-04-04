@@ -25,7 +25,7 @@
                                 @csrf
 
                                 <div class="row mb-3">
-                                    <label for="name" class="col-md-4 col-form-label text-md-end"><b>Full Name  </b></label>
+                                    <label for="name" class="col-md-4 col-form-label text-md-end">Full Name  </label>
 
                                     <div class="col-md-6">
                                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -39,7 +39,7 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="email" class="col-md-4 col-form-label text-md-end"><b>Email</b></label>
+                                    <label for="email" class="col-md-4 col-form-label text-md-end">Email</label>
 
                                     <div class="col-md-6">
                                         <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -53,7 +53,7 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="username" class="col-md-4 col-form-label text-md-end"><b>Username</b></label>
+                                    <label for="username" class="col-md-4 col-form-label text-md-end">Username</label>
 
                                     <div class="col-md-6">
                                         <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
@@ -67,7 +67,7 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="password" class="col-md-4 col-form-label text-md-end"><b>Password</b></label>
+                                    <label for="password" class="col-md-4 col-form-label text-md-end">Password</label>
 
                                     <div class="col-md-6">
                                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="8 characters minimum">
@@ -81,7 +81,7 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="password-confirm" class="col-md-4 col-form-label text-md-end"><b>Confirm Password</b></label>
+                                    <label for="password-confirm" class="col-md-4 col-form-label text-md-end">Confirm Password</label>
 
                                     <div class="col-md-6">
                                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -89,7 +89,7 @@
                                 </div>
 
                                 <div class="date">
-                                    <label for="date" class="col-md-4 col-form-label text-md-end"><b>Date of Birth</b></label>
+                                    <label for="date" class="col-md-4 col-form-label text-md-end">Date of Birth</label>
 
                                     <div class="col-md-6">
                                         <input id="date" type="date" class="date @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autocomplete="date">

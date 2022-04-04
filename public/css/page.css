@@ -127,7 +127,7 @@
   font-size: 48px
 }
 
-.search { 
+.search {
   width: 100%;
   position: relative;
   display: flex;
@@ -186,10 +186,10 @@
 
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {background-color: rgb(241, 161, 11);}
-  
+
   /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;}               
-  
+  .dropdown:hover .dropdown-content {display: block;}
+
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .img-buttonfilter {background-color: #f3f3f3;}
 
@@ -212,7 +212,7 @@
   background-color: #f3f3f3;
   padding-top: 40px;
   padding-left: 100px;
-  font-family: "Prompt";  
+  font-family: "Prompt";
   font-size: 36px;
   font-weight: 600;
 }
@@ -229,8 +229,8 @@
   border-radius: 40px;
   display: flex;
   justify-content: space-around;
-  align-items: center;    
-} 
+  align-items: center;
+}
 .makanan1{
   display: flex;
   width: auto;
@@ -264,7 +264,7 @@
   background-color: #f3f3f3;
   height: 100vh;
   padding-left: 100px;
-  font-family: "Prompt";  
+  font-family: "Prompt";
   font-size: 36px;
   font-weight: 600;
 }
@@ -274,7 +274,7 @@
   font-weight: 600;
 }
 .harga-makanan{
-  
+
   margin-bottom: 20px;
 }
 .add-button{
@@ -291,7 +291,7 @@
 .footer{
   position: fixed;
   height: 110px;
-  bottom: 0;  
+  bottom: 0;
   display: absolute;
   right: 5px;
 }
@@ -457,10 +457,10 @@
 .judul{
   font-size: 48px;
   font-weight: bold;
-  font-family: "Prompt"; 
+  font-family: "Prompt";
 }
 .judul p{
-  margin: 0px 0px 0px 0px; 
+  margin: 0px 0px 0px 0px;
 }
 .area-cart{
   flex-direction: column;
@@ -556,13 +556,13 @@
   border-radius: 45px;
   width: 399px;
   height: 35px;
-  border: 1px solid #C4C4C4; 
+  border: 1px solid #C4C4C4;
   display: flex;
 }
 
 .redeem[type=text]:focus{
   border: 1px solid orange;
-  outline: none;   
+  outline: none;
 }
 
 .button-checkout{
@@ -606,7 +606,7 @@
   width: 100%;
   justify-content: space-between;
   font-weight: 700;
-  font-size: 18px; 
+  font-size: 18px;
 }
 .charge{
   display: flex;
@@ -614,13 +614,46 @@
   justify-content: space-between;
   flex-direction: row;
   font-weight: 700;
-  font-size: 18px; 
-} 
+  font-size: 18px;
+}
 .total-summary{
   display: flex;
   width: 100%;
   justify-content: space-between;
   flex-direction: row;
   font-weight: 700;
-  font-size: 18px; 
+  font-size: 18px;
+}
+
+.btnaction{
+    display: flex;
+    flex-direction: row;
+}
+
+.btnaction a{
+    margin-right: 15px;
+}
+
+#tabel{
+    margin-left: 3rem;
+}
+
+h1{
+    margin-top: 7rem;
+    font-family: 'Prompt';
+    margin-left: 7rem;
+}
+
+hr{
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.btnadd button{
+    margin-left: 105rem;
+    padding: 10px 30px;
+    background-color: rgb(0, 148, 255);
+    border-radius: 10px;
+    font-family: 'Prompt';
+    color: white;
 }

@@ -14,7 +14,7 @@ class Admin extends Model
         'namaMenu',
         'kategoriMenu',
         'deskripsiMenu',
-        'hargaMenu'
+        'hargaMenu',
     ];
 
     public function quantityProduct() {
