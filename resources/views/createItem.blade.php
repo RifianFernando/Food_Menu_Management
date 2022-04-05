@@ -54,7 +54,7 @@
             <label for="file" class="form-label">Foto</label>
             <input name= "file" type="file" class="form-control" id="file" placeholder="Upload Image">
         </div>
-        
+
 
             @error('file')
                 <div class="alert alert-danger">{{$message}}</div>

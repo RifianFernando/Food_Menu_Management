@@ -19,8 +19,8 @@
               <a href="#list-food-container">Menu</a>
               @if(Auth::user()->username == 'admin')
                 <a href="{{ route('adminDashboard') }}">Admin Panel</a>
-              @else
-                <a href="/userPage">Detail</a>
+              {{-- @else --}}
+                {{-- <a href="/userPage">Detail</a> --}}
               @endif
                 @if(Route::has('login'))
                     @auth
@@ -152,7 +152,7 @@
                     <p>Shopping Cart</p>
                   </div>
                   <div class="area-cart">
-                    
+
                       <div class="isi-seluruh-cart">
                         <div class="gambar-makanan">
                           <img src="{{ asset('img/pasta1.png') }}" alt="">
