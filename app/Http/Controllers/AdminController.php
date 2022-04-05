@@ -23,6 +23,9 @@ class AdminController extends Controller
         for($i = 0; $i < count($makanan_quantity); $i++){
             $kuantitas[$i] = $makanan_quantity[$i]->quantity;
         }
+        if(empty($kuantitas) || empty($cart)){
+            return view('page', ['admins' => $admins,'total' => $total]); 
+        };
         $Looping_cart = count($kuantitas);
         return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart]); 
     }
@@ -117,9 +120,12 @@ class AdminController extends Controller
         $makanan_quantity = QuantityProduct::where('users_id', $user)->get();
         for($i = 0; $i < count($makanan_quantity); $i++){
             $kuantitas[$i] = $makanan_quantity[$i]->quantity;
-        }   
+        }  
+        if(empty($kuantitas) || empty($cart)){
+            return view('page', ['admins' => $admins,'total' => $total]); 
+        };
         $Looping_cart = count($kuantitas);
-    return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart]);
+        return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart]);
     }
 
     public function addToCart(Request $request, $id){
@@ -148,9 +154,11 @@ class AdminController extends Controller
         for($i = 0; $i < count($makanan_quantity); $i++){
             $kuantitas[$i] = $makanan_quantity[$i]->quantity;
         }
+        if(empty($kuantitas) || empty($cart)){
+            return view('page', ['admins' => $admins,'total' => $total]); 
+        };
         $Looping_cart = count($kuantitas);
         //passingkuantitas sama cart
-        dd($kuantitas);
         return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart]);
     }
 }

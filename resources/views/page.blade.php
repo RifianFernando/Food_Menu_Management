@@ -153,6 +153,11 @@
                   </div>
                   <div class="area-cart">
 
+                    @if(empty($cart) || empty($kuantitas))
+                      <div class="empty-cart">
+                        <p>Your cart is empty</p>
+                      </div>
+                    @else
                     @for($i=0; $i < count($cart); $i++)
                       <div class="isi-seluruh-cart">
                         <div class="gambar-makanan">
@@ -180,7 +185,7 @@
                         </div>
                     </div>
                     @endfor
-
+                    @endif
               </div>
 
               <form class="redeem-and-summary">
