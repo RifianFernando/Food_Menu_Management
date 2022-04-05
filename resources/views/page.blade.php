@@ -199,9 +199,11 @@
                     @endfor
                     @endif
               </div>
-
-              <form class="redeem-and-summary">
-                <input type="text" class="redeem" name="redeem" placeholder=" Enter Promotional Code">
+              <form class="redeem-and-summary" action="{{ route('checkToken') }}" method="POST">
+                @csrf
+                <input type="text"  name="redeem"  placeholder="@if($errors->any())
+                {{$errors->first()}} @else Enter Promotional Code
+                  @endif"class="form-control @error('redeem') is-invalid @enderror" >
                 <button type="submit" class="button-checkout">Redeem</button>
               </form>
               <div class="garis-batas">
@@ -236,6 +238,11 @@
                       @endphp
                       <p>Total price</p>
                     </div>
+                    @if($errors->any() == "Token berhasil ditukar")
+                      @php
+                        $totalharga = $totalharga * $diskon;
+                      @endphp
+                    @endif
                     <div class="harga-subtotal">
                       <p>Rp.{{ $totalharga }}</p>
                     </div>

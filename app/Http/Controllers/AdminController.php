@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\QuantityProduct;
+use App\Models\redeemCodeToken;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -173,6 +174,31 @@ class AdminController extends Controller
         }
 
         return redirect(route('userPage'));
+    }
+
+    public function PAGES(){
+        return view('AddTokenPage');
+    }
+
+    public function ntah(Request $request){
+        redeemCodeToken::create([
+            'token' => $request->token,
+            'discount' => $request->discount,
+        ]);
+
+
+        return redirect(route('adminDashboard'));
+    }
+
+    public function checkToken(Request $request){
+        $token = $request->redeem;
+        $redeemCodeToken = redeemCodeToken::where('token', $token)->first();
+        if($redeemCodeToken == null){
+            return redirect(route('userPage'))->withErrors(['error' => 'Token tidak ditemukan']);
+        }else{
+            $diskon = $redeemCodeToken->discount / 100;
+            return redirect(route('userPage',  ['diskon' => $diskon]))->withErrors(['error' => 'Token berhasil ditukar']);
+        }
     }
 }
 

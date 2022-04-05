@@ -16,7 +16,7 @@
         </div>
           <div class="navbar-right">
               <a href="/userPage">Home</a>
-              <a href="">Menu</a>
+              <a href="{{ route('PAGES') }}">Add Token</a>
               @if(Auth::user()->username == 'admin')
                 <a href="{{ route('adminDashboard') }}">Admin Panel</a>
               @else

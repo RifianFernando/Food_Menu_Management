@@ -31,6 +31,9 @@ Route::group(['middleware' => IsAdminMiddleware::class], function () {
     Route::get('/updateItem/{id}', [AdminController::class, 'updateItem'])->name('updateItem');
     Route::patch('/update/{id}', [AdminController::class, 'update'])->name('update');
     Route::delete('/delete/{id}',[AdminController::class, 'delete'])->name('delete');
+    Route::get('/PAGES', [AdminController::class, 'PAGES'])->name('PAGES');
+    Route::POST('/ntah', [AdminController::class, 'ntah'])->name('ntah');
+    
 });
 
 Route::get('/userPage', [AdminController::class, 'userPage'])->name('userPage');
@@ -45,4 +48,4 @@ Route::post('/addToCart/{id}', [AdminController::class, 'addToCart'])->name('add
 
 Route::post('/PlusorMinus/{id}', [AdminController::class, 'Increment'])->name('Increment');
 
-
+Route::post('/checkToken', [AdminController::class, 'checkToken'])->name('checkToken');

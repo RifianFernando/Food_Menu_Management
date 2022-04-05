@@ -2,7 +2,6 @@ const open = document.getElementById('button_cart');
 const modal = document.getElementById('modal_container');
 const close = document.getElementById('close_cart'); 
 const body = document.querySelector("*");
-const modal1 = document.getElementsByClassName('isi-cart');
 
 open.addEventListener('click', () => {
     modal.classList.add('show');

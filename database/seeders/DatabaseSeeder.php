@@ -25,5 +25,12 @@ class DatabaseSeeder extends Seeder
             'password' =>bcrypt('AKTIVISBNCC33'),
             'date' => '2000-02-24',
         ]);
+
+        DB::table('redeem_code_tokens')->insert([
+            'token' => 'ABN197V',
+            'discount' => 20,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }

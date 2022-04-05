@@ -48,5 +48,4 @@ class User extends Authenticatable
     public function quantityProduct() {
         return $this->hasManyquantity_table(QuantityProduct::class);
     }
-
 }
