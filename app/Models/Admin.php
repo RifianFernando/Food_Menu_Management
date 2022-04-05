@@ -18,6 +18,6 @@ class Admin extends Model
     ];
 
     public function quantityProduct() {
-        return $this->belongsTo(QuantityProduct::class);
+        return $this->hasMany(QuantityProduct::class);
     }
 }

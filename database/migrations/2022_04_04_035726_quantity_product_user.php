@@ -14,11 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('QuantityProductUser', function (Blueprint $table) {
-            $table->foreignId('users_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreignId('products_id')->references('id')->on('admins')->onDelete('cascade');
-            $table->integer('quantity')->default(0);
-            $table->rememberToken();        
-            $table->timestamps();
+            $table->id();
+            $table->foreignId('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('products_id')->references('id')->on('admins')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('quantity')->default(1);
         });
     }
 

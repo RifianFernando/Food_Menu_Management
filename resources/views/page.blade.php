@@ -153,16 +153,17 @@
                   </div>
                   <div class="area-cart">
 
+                    @for($i=0; $i < count($cart); $i++)
                       <div class="isi-seluruh-cart">
                         <div class="gambar-makanan">
-                          <img src="{{ asset('img/pasta1.png') }}" alt="">
+                          <img src="{{ asset('storage/'.$cart[$i]->file) }}" alt="">
                         </div>
                         <div class="judul-dan-harga">
                           <div class="judul-makanan">
-                            <p>Spaghetti aglio aglio</p>
+                            <p>{{ $cart[$i]->namaMenu }}</p>
                           </div>
                           <div class="harga">
-                            62.000
+                            Rp.{{ $cart[$i]->hargaMenu }}
                           </div>
                         </div>
 
@@ -171,13 +172,14 @@
                             +
                           </button>
                           <div class="box-jumlah">
-                            <p>1</p>
+                            <p>{{ $kuantitas[$i] }}</p>
                           </div>
                           <button type="button" class="tanda-tambah">
                             -
                           </button>
                         </div>
                     </div>
+                    @endfor
 
               </div>
 

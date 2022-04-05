@@ -494,6 +494,13 @@
 
 .gambar-makanan{
   margin-left: 40px;
+  height: 103px;
+  width: 113px;
+}
+.gambar-makanan img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 .judul-dan-harga{
   width: 200px;

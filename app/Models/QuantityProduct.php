@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class QuantityProduct extends Model
 {
     use HasFactory;
-
+    public $table = "quantityproductuser";
     protected $fillable = [
+        'id',
         'users_id',
         'products_id',
         'quantity'
@@ -22,4 +23,6 @@ class QuantityProduct extends Model
     public function product() {
         return $this->hasMany(Admin::class);
     }
+
+    public $timestamps = false;
 }
