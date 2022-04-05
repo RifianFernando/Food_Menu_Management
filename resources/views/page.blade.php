@@ -55,14 +55,6 @@
           </div>
             <form class="search" action="{{url('/cari')}}" method="GET">
               @csrf
-              <div class="dropdown">
-                <button class="img-buttonfilter"><img class="filter-button-search" src="{{ asset('img/filtersearch.png') }}" alt=""></button>
-                  <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                  </div>
-              </div>
                 <input type="text" class="searchTerm" name="cari" placeholder="What are you looking for?">
                 <button type="submit" class="searchButton">
                   <img  src="{{ asset('img/searchicon.png') }}">
@@ -201,7 +193,7 @@
               </div>
               <form class="redeem-and-summary" action="{{ route('checkToken') }}" method="POST">
                 @csrf
-                <input type="text"  name="redeem"  placeholder="@if($errors->any())
+                <input type="text" class="redeem" name="redeem"  placeholder="@if($errors->any())
                 {{$errors->first()}} @else Enter Promotional Code
                   @endif"class="form-control @error('redeem') is-invalid @enderror" >
                 <button type="submit" class="button-checkout">Redeem</button>
@@ -238,14 +230,10 @@
                       @endphp
                       <p>Total price</p>
                     </div>
-                    @if($errors->any() == "Token berhasil ditukar")
-                      @php
-                        $totalharga = $totalharga * $diskon;
-                      @endphp
-                    @endif
+
                     <div class="harga-subtotal">
                       <p>Rp.{{ $totalharga }}</p>
-                    </div>
+                    </div>  
                 </div>
               </div>
 

@@ -197,7 +197,7 @@ class AdminController extends Controller
             return redirect(route('userPage'))->withErrors(['error' => 'Token tidak ditemukan']);
         }else{
             $diskon = $redeemCodeToken->discount / 100;
-            return redirect(route('userPage',  ['diskon' => $diskon]))->withErrors(['error' => 'Token berhasil ditukar']);
+            return redirect(route('userPage'))->withErrors(['error' => 'Token berhasil ditukar']);
         }
     }
 }
