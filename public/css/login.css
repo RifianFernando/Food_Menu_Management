@@ -34,6 +34,7 @@ input{
     border-radius: 30px;
     padding-left: 20px;
     padding-right: 20px;
+    margin-right: 250px;
     width: 540px;
     height: 60px;
     font-size: 25px;
@@ -75,3 +76,4 @@ input{
     text-decoration: none;
 }
 
+.error { font-size:23px; color:red; }

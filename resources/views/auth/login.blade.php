@@ -24,7 +24,7 @@
 
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
+                        <form id="Form" method="POST" action="{{ route('login') }}" onsubmit="validate()">
                             @csrf
 
                             <div class="content">
@@ -89,6 +89,9 @@
         </div>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script src="{{ asset('js/form.js')}}"></script>
 </body>
 </html>
 

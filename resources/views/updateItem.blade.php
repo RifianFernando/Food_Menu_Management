@@ -12,7 +12,7 @@
     <div class="container">
         <h1 class="judul">Edit Menu</h1>
 
-        <form class="form" action="{{ route('update', ['id' => $admins->id])}}"  method="POST" enctype="multipart/form-data">
+        <form id="Form" class="form" action="{{ route('update', ['id' => $admins->id])}}"  method="POST" enctype="multipart/form-data" onsubmit="validate()">
           @csrf
           @method('patch')
 
@@ -20,7 +20,7 @@
 
           <div class="content">
               <label for="namaMenu" class="nama-form">Nama Makanan</label>
-              <input name="namaMenu" type="text" class="form-control"  id="namaMenu" value="{{ $admins->namaMenu}}" placeholder="Masukkan Nama Menu">
+              <input name="namaMenu" type="text" class="form-control"  id="namaMenu" value="{{ $admins->namaMenu}}" placeholder="Masukkan Nama Menu" required>
           </div>
 
               @error('namaMenu')
@@ -45,7 +45,7 @@
 
           <div class="content">
               <label for="hargaMenu" class="form-label">Harga</label>
-              <input name= "hargaMenu" type="numeric" class="form-control" id="hargaMenu" value="{{ $admins->hargaMenu }}" placeholder="Rp">
+              <input name= "hargaMenu" type="numeric" class="form-control" id="hargaMenu" value="{{ $admins->hargaMenu }}" placeholder="Rp" required>
           </div>
 
               @error('hargaMenu')
@@ -54,7 +54,7 @@
 
               <div class="content-file">
                 <label for="file" class="form-label">Foto</label>
-                <input name= "file" type="file" class="form-control" value="{{$admins->file}}" id="file" placeholder="Upload Image">
+                <input name= "file" type="file" class="form-control" value="{{$admins->file}}" id="file" placeholder="Upload Image" required>
             </div>
 
                 @error('file')
@@ -75,7 +75,9 @@
       </form>
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="{{ asset('js/admin.js')}}"></script>
 
 </body>
 </html>

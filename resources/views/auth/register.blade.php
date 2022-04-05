@@ -21,13 +21,13 @@
                         </div>
 
                         <div class="card-body">
-                            <form method="POST" action="{{ route('register') }}">
+                            <form id="Form" method="POST" action="{{ route('register') }}" onsubmit="validate()">
                                 @csrf
 
-                                <div class="row mb-3">
+                                <div class="content">
                                     <label for="name" class="col-md-4 col-form-label text-md-end">Full Name  </label>
 
-                                    <div class="col-md-6">
+                                    <div class="name">
                                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                         @error('name')
@@ -38,10 +38,10 @@
                                     </div>
                                 </div>
 
-                                <div class="row mb-3">
+                                <div class="content">
                                     <label for="email" class="col-md-4 col-form-label text-md-end">Email</label>
 
-                                    <div class="col-md-6">
+                                    <div class="email">
                                         <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                         @error('email')
@@ -52,10 +52,10 @@
                                     </div>
                                 </div>
 
-                                <div class="row mb-3">
+                                <div class="content">
                                     <label for="username" class="col-md-4 col-form-label text-md-end">Username</label>
 
-                                    <div class="col-md-6">
+                                    <div class="username">
                                         <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
 
                                         @error('username')
@@ -66,10 +66,10 @@
                                     </div>
                                 </div>
 
-                                <div class="row mb-3">
+                                <div class="content">
                                     <label for="password" class="col-md-4 col-form-label text-md-end">Password</label>
 
-                                    <div class="col-md-6">
+                                    <div class="password">
                                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="8 characters minimum">
 
                                         @error('password')
@@ -80,19 +80,19 @@
                                     </div>
                                 </div>
 
-                                <div class="row mb-3">
+                                <div class="content">
                                     <label for="password-confirm" class="col-md-4 col-form-label text-md-end">Confirm Password</label>
 
-                                    <div class="col-md-6">
+                                    <div class="password_confirmation">
                                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                     </div>
                                 </div>
 
-                                <div class="date">
+                                <div class="content">
                                     <label for="date" class="col-md-4 col-form-label text-md-end">Date of Birth</label>
 
-                                    <div class="col-md-6">
-                                        <input id="date" type="date" class="date @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autocomplete="date">
+                                    <div class="date">
+                                        <input id="date" type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autocomplete="date">
 
                                         @error('date')
                                             <span class="invalid-feedback" role="alert">
@@ -104,8 +104,8 @@
 
 
 
-                                <div class="row mb-0">
-                                    <div class="col-md-6 offset-md-4">
+                                <div class="content">
+                                    <div class="btn">
                                         <button type="submit" class="btnregister">
                                            Register
                                         </button>
@@ -121,7 +121,9 @@
     </div>
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="{{ asset('js/form.js')}}"></script>
 </body>
 </html>
 

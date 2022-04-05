@@ -11,14 +11,14 @@
 
 <div class="container">
     <h1 class="judul">Add Menu</h1>
-    <form class="form" action="{{ route('create')}}"  method="POST" enctype="multipart/form-data">
+    <form id="Form" class="form" action="{{ route('create')}}"  method="POST" enctype="multipart/form-data" onsubmit="validate()">
       @csrf
 
 
 
       <div class="content">
           <label for="namaMenu" class="form-label">Nama Makanan</label>
-          <input name="namaMenu" type="text" class="form-control" id="namaMenu" value="{{ old('namaMenu') }}" placeholder="Masukkan Nama Menu">
+          <input name="namaMenu" type="text" class="form-control" id="namaMenu" value="{{ old('namaMenu') }}" placeholder="Masukkan Nama Menu" required>
       </div>
 
           @error('namaMenu')
@@ -43,7 +43,7 @@
 
       <div class="content">
           <label for="hargaMenu" class="form-label">Harga</label>
-          <input name= "hargaMenu" type="numeric" class="form-control" id="hargaMenu" value="{{ old('hargaMenu') }}" placeholder="Rp">
+          <input name= "hargaMenu" type="numeric" class="form-control" id="hargaMenu" value="{{ old('hargaMenu') }}" placeholder="Rp" required>
       </div>
 
           @error('hargaMenu')
@@ -52,7 +52,7 @@
 
           <div class="content-file">
             <label for="file" class="form-label">Foto</label>
-            <input name= "file" type="file" class="form-control" id="file" placeholder="Upload Image">
+            <input name= "file" type="file" class="form-control" id="file" placeholder="Upload Image" required>
         </div>
 
 
@@ -73,7 +73,9 @@
   </form>
 </div>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script src="{{ asset('js/admin.js')}}"></script>
 
 </body>
 </html>

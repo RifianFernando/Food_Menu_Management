@@ -26,8 +26,9 @@ h1{
     margin-bottom: 1rem;
 }
 
-.content label{
+.content label, .content-deskripsi label, .content-file label{
     font-size: 18px;
+    margin-bottom: 1rem;
 }
 .content input{
     padding: 10px 20px;
@@ -82,3 +83,5 @@ button{
     border: none;
     font-size: 15px;
 }
+
+.error { font-size:small; color:red; }

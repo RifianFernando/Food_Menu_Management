@@ -34,6 +34,7 @@ input{
     border-radius: 30px;
     padding-left: 20px;
     padding-right: 20px;
+    margin-right: 250px;
     width: 540px;
     height: 50px;
     font-size: 25px;
@@ -42,7 +43,11 @@ input{
 }
 
 .container input{
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
+}
+
+.content .name, .content .email, .content .username, .content .password, .content .password_confirmation, .content .date, .content .btn{
+    margin-bottom: 30px;
 }
 
 .date input{
@@ -57,3 +62,5 @@ input{
     border: none;
     font-size: 20px;
 }
+
+.error { font-size:23px; color:red; }
