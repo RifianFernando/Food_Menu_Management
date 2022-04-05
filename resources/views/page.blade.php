@@ -122,7 +122,7 @@
                                 <p>{{$admin->deskripsiMenu}}</p>
                               </div>
                               <div class="harga-makanan-modal">
-                                <p>{{ $admin->hargaMenu }}</p>
+                                <p>Rp.{{ $admin->hargaMenu }}</p>
                                 <form action="{{ route('addToCart', ['id'=>$admin->id]) }}" method="post">
                                   @csrf
                                     <button type="submit" id="noob" class="add-button-modal">
@@ -152,7 +152,9 @@
                     <p>Shopping Cart</p>
                   </div>
                   <div class="area-cart">
-
+                    @php
+                      $subtotal = 0;
+                    @endphp
                     @if(empty($cart) || empty($kuantitas))
                       <div class="empty-cart">
                         <p>Your cart is empty</p>
@@ -169,21 +171,29 @@
                           </div>
                           <div class="harga">
                             Rp.{{ $cart[$i]->hargaMenu }}
+                            @php
+                              $subtotal += $cart[$i]->hargaMenu * $kuantitas[$i];
+                              
+                            @endphp
                           </div>
                         </div>
 
                         <div class="jumlah-kurang">
-                              <button type="button" class="tanda-tambah">
+                            <form action="{{ route('addToCart', ['id'=>$cart[$i]->id]) }}" method="post">
+                            @csrf
+                              <button type="submit" class="tanda-tambah">
                                 +
                               </button>
+                            </form>
                           <div class="box-jumlah">
                             <p>{{ $kuantitas[$i] }}</p>
                           </div>
-                          <form action="{{route('IncreOrDecre', ['id'=>$cart[$i]->id])}}" method="POST">
-                              <button type="button" class="tanda-tambah">
+                          <form action="{{route('Increment', ['id'=>$cart[$i]->id])}}" method="POST">
+                            @csrf
+                              <button type="submit" class="tanda-tambah">
                                 -
                               </button>
-                        </form>
+                          </form>
                         </div>
                     </div>
                     @endfor
@@ -205,23 +215,29 @@
                       <p>Subtotal</p>
                     </div>
                     <div class="harga-subtotal">
-                      <p>Rp. 62.000</p>
+                      <p>Rp.{{ $subtotal }}</p>
                     </div>
                 </div>
                 <div class="charge">
                     <div class="total">
+                      @php
+                        $charge = 0.10 * $subtotal;
+                      @endphp
                       <p>Service Charge (10%)</p>
                     </div>
                     <div class="harga-subtotal">
-                      <p>Rp. 10.800</p>
+                      <p>Rp.{{$charge}}</p>
                     </div>
                 </div>
                 <div class="total-summary">
                     <div class="total">
+                      @php
+                        $totalharga = $subtotal + $charge;
+                      @endphp
                       <p>Total price</p>
                     </div>
                     <div class="harga-subtotal">
-                      <p>Rp. 62.000</p>
+                      <p>Rp.{{ $totalharga }}</p>
                     </div>
                 </div>
               </div>

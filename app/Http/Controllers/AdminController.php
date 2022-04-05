@@ -128,7 +128,7 @@ class AdminController extends Controller
         return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart]);
     }
 
-    public function addToCart(Request $request, $id){
+    public function addToCart($id){
         $admins = Admin::all();
         $total = Admin::count();
         $user = Auth::user()->id;
@@ -157,13 +157,22 @@ class AdminController extends Controller
         if(empty($kuantitas) || empty($cart)){
             return view('page', ['admins' => $admins,'total' => $total]); 
         };
-        $Looping_cart = count($kuantitas);
-        //passingkuantitas sama cart
-        return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart]);
+        return redirect(route('userPage'));
     }
 
-    public function IncreOrDecre(Request $Request, $id){
-        $quantity_table = QuantityProduct::where('users_id');
+    public function Increment($id){
+        $user_id = Auth::user()->id;
+        $quantity_table = QuantityProduct::where('products_id', $id)->where('users_id', $user_id)->first();
+
+        if($quantity_table->quantity == 1){
+            QuantityProduct::destroy($quantity_table->id);
+        }else{
+            $quantity_table->update([
+                'quantity' => $quantity_table->quantity - 1
+            ]);
+        }
+
+        return redirect(route('userPage'));
     }
 }
 
