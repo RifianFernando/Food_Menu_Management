@@ -43,5 +43,6 @@ Route::get('/cari', [AdminController::class, 'cari'])->name('cari');
 
 Route::post('/addToCart/{id}', [AdminController::class, 'addToCart'])->name('addToCart');
 
+Route::post('/PlusorMinus/{id}', [AdminController::class, 'IncreOrDecre'])->name('IncreOrDecre');
 
 

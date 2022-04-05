@@ -161,5 +161,9 @@ class AdminController extends Controller
         //passingkuantitas sama cart
         return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart]);
     }
+
+    public function IncreOrDecre(Request $Request, $id){
+        $quantity_table = QuantityProduct::where('users_id');
+    }
 }
 

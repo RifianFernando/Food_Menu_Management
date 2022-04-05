@@ -173,15 +173,17 @@
                         </div>
 
                         <div class="jumlah-kurang">
-                          <button type="button" class="tanda-tambah">
-                            +
-                          </button>
+                              <button type="button" class="tanda-tambah">
+                                +
+                              </button>
                           <div class="box-jumlah">
                             <p>{{ $kuantitas[$i] }}</p>
                           </div>
-                          <button type="button" class="tanda-tambah">
-                            -
-                          </button>
+                          <form action="{{route('IncreOrDecre', ['id'=>$cart[$i]->id])}}" method="POST">
+                              <button type="button" class="tanda-tambah">
+                                -
+                              </button>
+                        </form>
                         </div>
                     </div>
                     @endfor
