@@ -20,10 +20,6 @@ window.onclick = function(event) {
     }
 }
 
-function food() {  
-    
-}  
 
-function drink(){
 
-}
+
