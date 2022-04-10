@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 class AdminController extends Controller
 {
     public function userPage(){
+        $category = "Food";
         $admins = Admin::all();
         $total = Admin::count();
         $user = Auth::user()->id;
@@ -28,7 +29,7 @@ class AdminController extends Controller
             return view('page', ['admins' => $admins,'total' => $total]); 
         };
         $Looping_cart = count($kuantitas);
-        return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart]); 
+        return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart, 'title' => "Lana's Western $category"]); 
     }
     
     public function adminDashboard(){

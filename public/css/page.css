@@ -107,21 +107,40 @@
   gap: 48px;
   width: 600px;
   font-family: "Prompt";
-  padding-bottom: 2px;
+  padding-bottom: 2px;text-decoration: none;
+  color: var(--dark-blue);
+  font-weight: bold;
+  font-size: 1px;
 }
 
-.type-food a:hover{
+/* .type-food a:hover{
   text-decoration: none;
   color: var(--dark-blue);
   font-weight: bold;
   font-size: 48px;
-}
-.type-food a:active{
+} */
+
+/* .type-food-active{
   text-decoration: none;
   color: var(--dark-blue);
   font-weight: bold;
-  font-size: 48px;
+  font-size: 1px;
 }
+
+.type-food-nonactive{
+  text-decoration: none;
+}
+
+.type-drink-active{
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-weight: bold;
+}
+
+.type-drink-nonactive{
+  text-decoration: none;
+} */
+
 .search img{
   width: 30px;
   background-color: #f3f3f3;
