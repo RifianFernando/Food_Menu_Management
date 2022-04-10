@@ -110,23 +110,37 @@
   padding-bottom: 2px;
 }
 
-.type-food a:hover{
+.type-food button{
+  border: none;
+  background-color: transparent;
+}
+
+.type-food button:hover{
   text-decoration: none;
   color: var(--dark-blue);
   font-weight: bold;
   font-size: 48px;
 }
-.type-food a:active{
+
+.food-button.active{
   text-decoration: none;
   color: var(--dark-blue);
   font-weight: bold;
   font-size: 48px;
 }
+
+.drink-button.active{
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-weight: bold;
+  font-size: 48px;
+}
+
 .search img{
   width: 30px;
   background-color: #f3f3f3;
 }
-.type-food a{
+.type-food button{
   text-decoration: none;
   color: #C4C4C4;
   font-weight: bold;
@@ -226,6 +240,13 @@
 #list-food
 {
   background-color: #f3f3f3;
+  display: block;
+
+}
+
+#list-drink{
+  background-color: #f3f3f3;
+  display: none;
 }
 
 .makanan{

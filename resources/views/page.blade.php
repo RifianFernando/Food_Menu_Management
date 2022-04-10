@@ -50,8 +50,8 @@
 
       <div class="navbartype">
           <div class="type-food">
-            <a href="#no-food">Food</a>
-            <a href="#no-food">Drink</a>
+            <button class="food-button" onclick="food()">Food</button>
+            <button class="drink-button" onclick="drink()">Drink</button>
           </div>
             <form class="search" action="{{url('/cari')}}" method="GET">
               @csrf
@@ -72,9 +72,70 @@
         </div>
 
       @else
-    <section id="list-food">
-    @foreach ($admins as $admin)
+      <section id="list-food">
+            @foreach ($admins as $admin)
+              @if($admin->kategoriMenu == 'Makanan')
+              <div class="foreach-food">
+                <div class="makanan">
+                  <div class="gambar">
+                    <img src="{{ asset('storage/'.$admin->file) }}" alt="Food.png">
+                  </div>
+                <div class="makanan1">
+                  <div class="nama-makanan">
+                    <p> {{ $admin->namaMenu }}</p>
+                  </div>
+                  <div class="harga-makanan">
+                    <p> Rp{{ $admin->hargaMenu }}</p>
+                  </div>
+                  <button type="button" onclick="myFunction()" id="myBtn" class="add-button" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $admin->id }}">
+                    <img src="{{ asset('img/add-button1.png') }}">
+                  </button>
+                </div>
+                </div>
+              </div>
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal{{ $admin->id }}" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
 
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="isi-cart">
+                              <button type="button" onclick="myFunction()"class="btn" id="closing" data-bs-dismiss="modal"><span class="close">&times;</span></button>
+                                <div class="img-modal">
+                                  <div class="img-css">
+                                    <img src="{{ asset('storage/'.$admin->file) }}" alt="">
+                                  </div>
+                                </div>
+                                <br>
+                                <div class="nama-makanan-modal">
+                                  <p>{{ $admin->namaMenu }}</p>
+                                </div>
+                                <div class="deskripsi-makanan-modal">
+                                  <p>{{$admin->deskripsiMenu}}</p>
+                                </div>
+                                <div class="harga-makanan-modal">
+                                  <p>Rp.{{ $admin->hargaMenu }}</p>
+                                  <form action="{{ route('addToCart', ['id'=>$admin->id]) }}" method="post">
+                                    @csrf
+                                      <button type="submit" id="noob" class="add-button-modal">
+                                        <img src="{{ asset('img/add-button1.png') }}">
+                                      </button>
+                                  </form>
+
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    @else
+                    @endif
+            @endforeach
+        </section>
+
+        {{-- drink --}}
+        <section id="list-drink">
+          @foreach ($admins as $admin)
+            @if($admin->kategoriMenu == 'Minuman')
             <div class="foreach-food">
               <div class="makanan">
                 <div class="gambar">
@@ -127,10 +188,11 @@
                         </div>
                       </div>
                   </div>
+                  @else
+                  @endif
           @endforeach
-          @endif
-        </section>
-
+      </section>
+    @endif
 
       <div class="footer">
         <button type="button" id="button_cart" class="button-cart" data-toggle="modal" data-target="#exampleModalIn" style="background: url({{ asset('img/button-cart.png') }})">c</button>
