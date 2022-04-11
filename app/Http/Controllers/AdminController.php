@@ -29,7 +29,7 @@ class AdminController extends Controller
             return view('page', ['admins' => $admins,'total' => $total]); 
         };
         $Looping_cart = count($kuantitas);
-        return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart, 'title' => "Lana's Western $category"]); 
+        return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart]); 
     }
     
     public function adminDashboard(){

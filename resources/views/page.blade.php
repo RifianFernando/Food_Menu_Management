@@ -7,7 +7,7 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/page.css') }}">
-    <title>{{ $title }}</title>
+    <title>Lana's Western Food</title>
 </head>
 <body>
     <div class="navbar-container">
@@ -50,13 +50,8 @@
 
       <div class="navbartype">
           <div class="type-food">
-            @if($title == "Lana's Western Food")
               <a class="type-food-active" href="#no-food">Food</a>
               <a class="type-drink-nonactive" href="#no-food">Drink</a>
-            @else
-              <a class="type-food-nonactive" href="#no-food">Food</a>
-              <a class="type-drink-active" href="#no-food">Drink</a>
-            @endif
           </div>
             <form class="search" action="{{url('/cari')}}" method="GET">
               @csrf
