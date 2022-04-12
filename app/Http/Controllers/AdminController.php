@@ -109,24 +109,47 @@ class AdminController extends Controller
 
     public function cari(Request $request){
         $cari = $request->cari;
-        $total = Admin::count();
-        $admins = DB::table('admins')
-        ->where('namaMenu','like',"%".$cari."%")->paginate();
-        $user = Auth::user()->id;
-        $quantity = QuantityProduct::where('users_id', $user)->get('products_id');
-        for($i = 0; $i < count($quantity); $i++){
-            $detail_product_user = $quantity[$i]->products_id;
-            $cart[$i] = Admin::find($detail_product_user);
+        
+            $total = Admin::count();
+            $admins = DB::table('admins')
+            ->where('namaMenu','like',"%".$cari."%")->paginate();
+            $user = Auth::user()->id;
+            $quantity = QuantityProduct::where('users_id', $user)->get('products_id');
+            for($i = 0; $i < count($quantity); $i++){
+                $detail_product_user = $quantity[$i]->products_id;
+                $cart[$i] = Admin::find($detail_product_user);
+            }
+            $makanan_quantity = QuantityProduct::where('users_id', $user)->get();
+            for($i = 0; $i < count($makanan_quantity); $i++){
+                $kuantitas[$i] = $makanan_quantity[$i]->quantity;
+            }  
+            if(empty($kuantitas) || empty($cart)){
+                return view('page', ['admins' => $admins,'total' => $total]); 
+            };
+            $Looping_cart = count($kuantitas);
+            return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart]);
+        
+    }
+    public function filter(Request $request, $kategori){
+        if($kategori == "Makanan" || $kategori == "Minuman"){
+            $admins = Admin::where('kategoriMenu', $kategori)->get();
+            $total = Admin::where('kategoriMenu', $kategori)->count();
+            $user = Auth::user()->id;
+            $quantity = QuantityProduct::where('users_id', $user)->get('products_id');
+            for($i = 0; $i < count($quantity); $i++){
+                $detail_product_user = $quantity[$i]->products_id;
+                $cart[$i] = Admin::find($detail_product_user);
+            }
+            $makanan_quantity = QuantityProduct::where('users_id', $user)->get();
+            for($i = 0; $i < count($makanan_quantity); $i++){
+                $kuantitas[$i] = $makanan_quantity[$i]->quantity;
+            }
+            if(empty($kuantitas) || empty($cart)){
+                return view('page', ['admins' => $admins,'total' => $total]); 
+            }
+            $Looping_cart = count($kuantitas);
+            return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart]);
         }
-        $makanan_quantity = QuantityProduct::where('users_id', $user)->get();
-        for($i = 0; $i < count($makanan_quantity); $i++){
-            $kuantitas[$i] = $makanan_quantity[$i]->quantity;
-        }  
-        if(empty($kuantitas) || empty($cart)){
-            return view('page', ['admins' => $admins,'total' => $total]); 
-        };
-        $Looping_cart = count($kuantitas);
-        return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart]);
     }
 
     public function addToCart($id){

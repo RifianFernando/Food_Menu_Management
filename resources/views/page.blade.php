@@ -50,8 +50,8 @@
 
       <div class="navbartype">
           <div class="type-food">
-              <a class="type-food-active" href="#no-food">Food</a>
-              <a class="type-drink-nonactive" href="#no-food">Drink</a>
+              <a class="type-food-active" href="{{ route('filter', ['kategori' => "Makanan"]) }}">Food</a>
+              <a class="type-drink-nonactive" href="{{ route('filter', ['kategori' => "Minuman"]) }}">Drink</a>
           </div>
             <form class="search" action="{{url('/cari')}}" method="GET">
               @csrf
@@ -63,7 +63,7 @@
             </form>
       </div>
       <div class="list-food-container" id="list-food-container">
-        <p>Main Course</p>
+        <p><a href="{{ route('userPage') }}" class="main-coursehref">Main Course</a></p>
       </div>
 
       @if($total == 0)

@@ -684,3 +684,13 @@ hr{
     font-family: 'Prompt';
     color: white;
 }
+
+.main-coursehref{
+  text-decoration: none;
+  color: #242424;
+}
+
+.main-coursehref:hover{
+  text-decoration: none;
+  color: #242424;
+}
