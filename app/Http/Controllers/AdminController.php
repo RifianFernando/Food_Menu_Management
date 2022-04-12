@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\DB;
 class AdminController extends Controller
 {
     public function userPage(){
-        $category = "Food";
         $admins = Admin::all();
         $total = Admin::count();
         $user = Auth::user()->id;
