@@ -209,18 +209,34 @@ class AdminController extends Controller
             'discount' => $request->discount,
         ]);
 
-
         return redirect(route('adminDashboard'));
     }
 
     public function checkToken(Request $request){
+        $admins = Admin::all();
+        $total = Admin::count();
+        $user = Auth::user()->id;
+        $quantity = QuantityProduct::where('users_id', $user)->get('products_id');
+        for($i = 0; $i < count($quantity); $i++){
+            $detail_product_user = $quantity[$i]->products_id;
+            $cart[$i] = Admin::find($detail_product_user);
+        }
+        $makanan_quantity = QuantityProduct::where('users_id', $user)->get();
+        for($i = 0; $i < count($makanan_quantity); $i++){
+            $kuantitas[$i] = $makanan_quantity[$i]->quantity;
+        }
+        if(empty($kuantitas) || empty($cart)){
+            return view('page', ['admins' => $admins,'total' => $total]); 
+        };
+        $Looping_cart = count($kuantitas);
+
         $token = $request->redeem;
         $redeemCodeToken = redeemCodeToken::where('token', $token)->first();
         if($redeemCodeToken == null){
-            return redirect(route('userPage'))->withErrors(['error' => 'Token tidak ditemukan']);
+            return view('page', ['admins' => $admins,'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart, 'error' => 'Token tidak ditemukan']);
         }else{
             $diskon = $redeemCodeToken->discount / 100;
-            return redirect(route('userPage'))->withErrors(['error' => 'Token berhasil ditukar']);
+            return view('page', ['admins' => $admins,'diskon'=>$diskon, 'total' => $total, 'cart' => $cart, 'kuantitas' => $kuantitas, 'Looping_cart' => $Looping_cart, 'error' => 'Token ditemukan']);
         }
     }
 }

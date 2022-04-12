@@ -193,9 +193,8 @@
               </div>
               <form class="redeem-and-summary" action="{{ route('checkToken') }}" method="POST">
                 @csrf
-                <input type="text" class="redeem" name="redeem"  placeholder="@if($errors->any())
-                {{$errors->first()}} @else Enter Promotional Code
-                  @endif"class="form-control @error('redeem') is-invalid @enderror" >
+                <input type="text" class="redeem" name="redeem"  placeholder="@if(empty($error))Enter Promotional Code
+                @else {{$error}} @endif"class="form-control">
                 <button type="submit" class="button-checkout">Redeem</button>
               </form>
               <div class="garis-batas">
@@ -223,16 +222,33 @@
                       <p>Rp.{{$charge}}</p>
                     </div>
                 </div>
+                @if(empty($diskon))
+
+                @else
+                  <div class="total-summary">
+                    <div class="total">
+                      <p>Discount</p>
+                    </div>
+                    <div class="harga-subtotal">
+                      <p>{{ $diskon * 100 }}%</p>
+                    </div>
+                  </div>
+                @endif
                 <div class="total-summary">
                     <div class="total">
                       @php
-                        $totalharga = $subtotal + $charge;
+                        $totalharga = $subtotal + $charge;  
+                        if(empty($diskon)){
+                          $diskon = 0;
+                        }else{
+                          $dikontasi = $diskon * $totalharga;
+                          $totalharga = $totalharga - $dikontasi;
+                        }
                       @endphp
                       <p>Total price</p>
-                    </div>
-
+                    </div>      
                     <div class="harga-subtotal">
-                      <p>Rp.{{ $totalharga }}</p>
+                      <p>Rp{{ $totalharga  }}</p>
                     </div>  
                 </div>
               </div>
